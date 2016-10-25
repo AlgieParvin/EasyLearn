@@ -50,12 +50,12 @@ public class Main {
 <EasyLearn>
     <!--<Theme name="Family members">-->
         <Vocabulary>
-            <Word english="Father">
+            <Translation english="Father">
                 <Spelling>mglfmlmv;ls,;fv</Spelling>
                 <Translation>отец</Translation>
                 <Definition>Parent which isn't mother.</Definition>
                 <Example>Luke, I am your father.</Example>
-            </Word>
+            </Translation>
         </Vocabulary>
         <!--<Test>
 

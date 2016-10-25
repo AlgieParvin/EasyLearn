@@ -1,4 +1,4 @@
-package ua.nure.crew.easylearn;
+package ua.nure.crew.easylearn.type;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import ua.nure.crew.easylearn.R;
 
 public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTypeViewHolder> {
 

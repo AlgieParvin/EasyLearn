@@ -1,7 +1,9 @@
-package ua.nure.crew.easylearn;
+package ua.nure.crew.easylearn.type;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ua.nure.crew.easylearn.R;
 
 public class TaskType {
 
@@ -9,6 +11,7 @@ public class TaskType {
     int tasks;
     int passedTasks;
     int imageId;
+    boolean tasksInfo;
 
     // This static method is responsible for getting the quantity of all and passed tasks from
     // database to TaskTypeActivity.
@@ -27,5 +30,6 @@ public class TaskType {
         this.tasks = tasks;
         this.passedTasks = passedTasks;
         this.imageId = imageId;
+        this.tasksInfo = true;
     }
 }
