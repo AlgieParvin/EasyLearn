@@ -1,0 +1,15 @@
+<EasyLearn>
+    <!--<Theme name="Family members">-->
+        <Vocabulary>
+            <Word english="Father">
+                <Spelling>mglfmlmv;ls,;fv</Spelling>
+                <Translation>отец</Translation>
+                <Definition>Parent which isn't mother.</Definition>
+                <Example>Luke, I am your father.</Example>
+            </Word>
+        </Vocabulary>
+        <!--<Test>
+
+        </Test>-->
+
+</EasyLearn>
