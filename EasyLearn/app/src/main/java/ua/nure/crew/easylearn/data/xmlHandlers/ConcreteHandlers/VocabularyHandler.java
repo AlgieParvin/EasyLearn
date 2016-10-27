@@ -17,10 +17,10 @@ public class VocabularyHandler extends XmlElementHandler {
         data = new Vocabulary();
     }
 
-    @Override
+    /*@Override
     public XmlParsable getData() {
         return data;
-    }
+    }*/
 
     @Override
     protected void switchHandler(String qName, Attributes attributes) {

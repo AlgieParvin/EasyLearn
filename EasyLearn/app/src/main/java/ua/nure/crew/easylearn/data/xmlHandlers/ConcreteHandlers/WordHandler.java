@@ -13,7 +13,7 @@ public class WordHandler extends XmlElementHandler {
 
     public WordHandler(Attributes attributes)
     {
-        tagName = "Translation";
+        tagName = "Word";
         data = new Word(attributes.getValue("english"));
     }
 
@@ -28,8 +28,8 @@ public class WordHandler extends XmlElementHandler {
         word += pair.getType() + " " + pair.getData();
     }*/
 
-    @Override
+    /*@Override
     public XmlParsable getData() {
         return data;
-    }
+    }*/
 }

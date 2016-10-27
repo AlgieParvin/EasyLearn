@@ -22,10 +22,10 @@ public class RootHandler extends XmlElementHandler {
             case "Vocabulary":
                 innerHandler = new VocabularyHandler();
                 break;
-            //case "Test":
+            case "Test":
                 // Change!
-                //innerHandler = new TextHandler(qName);
-                //break;
+                innerHandler = new TestHandler();
+                break;
             default:
                 throw new XmlParsingException("Unexpected tag type:" + qName);
         }

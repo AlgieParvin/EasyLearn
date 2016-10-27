@@ -37,7 +37,7 @@ public abstract class XmlElementHandler extends SimpleHandler {
         if (qName.equalsIgnoreCase(tagName))
         {
             if (innerHandler.isWorking())
-                throw new XmlParsingException("Tag not closed.");
+                throw new XmlParsingException("Tag not closed:" + qName);
             endWork();
         }
         // �������� ��������� �������� ������.
