@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class VocabularyActivity extends AppCompatActivity {
         //mTaskTypeList = Translation.loadData(mTopic);
         List<Word> words;
         try {
-            words = SimpleLoader.getInstance().loadFromXML();
+            words = SimpleLoader.getInstance().loadFromXML(getAssets().open("data.xml"));
             mTaskTypeList = new ArrayList<>(words.size());
 
             for (int i = 0; i < words.size(); i++)
@@ -42,6 +43,8 @@ public class VocabularyActivity extends AppCompatActivity {
 
         } catch (DataLoadingException e) {
             e.printStackTrace(); // Change to showing error to user!!!
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
 

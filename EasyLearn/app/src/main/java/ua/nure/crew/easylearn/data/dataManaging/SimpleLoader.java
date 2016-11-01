@@ -1,6 +1,7 @@
 package ua.nure.crew.easylearn.data.dataManaging;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import org.xml.sax.SAXException;
@@ -18,7 +19,7 @@ public class SimpleLoader implements ResourceLoader {
     private final String FILENAME = "Data.xml";
     private static ResourceLoader instance = null;
 
-    public List<Word> loadFromXML() throws DataLoadingException {
+    public List<Word> loadFromXML(InputStream is) throws DataLoadingException {
         Vocabulary vocabulary;
 
         try {
@@ -26,7 +27,7 @@ public class SimpleLoader implements ResourceLoader {
             SAXParser parser = factory.newSAXParser();
 
             XmlHandler xml = new XmlHandler();
-            parser.parse(FILENAME, xml);
+            parser.parse(is, xml);
 
             EasyLearnData data = (EasyLearnData) xml.getData();
             vocabulary = (Vocabulary) data.getContent(0);
