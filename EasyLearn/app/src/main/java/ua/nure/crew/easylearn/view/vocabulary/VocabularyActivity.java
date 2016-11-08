@@ -31,7 +31,7 @@ public class VocabularyActivity extends AppCompatActivity {
         //mTaskTypeList = Translation.loadData(mTopic);
         List<Word> words;
         try {
-            words = SimpleLoader.getInstance().loadFromXML();
+            words = SimpleLoader.getInstance().loadWords();
             mTaskTypeList = new ArrayList<>(words.size());
 
             for (int i = 0; i < words.size(); i++)
