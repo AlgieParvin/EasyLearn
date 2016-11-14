@@ -1,6 +1,7 @@
 package ua.nure.crew.easylearn.data.dataManaging;
 
 import java.io.IOException;
+import java.util.List;
 
 import android.content.res.AssetManager;
 import org.xml.sax.SAXException;
@@ -41,5 +42,14 @@ public class SimpleLoader implements ResourceLoader {
         return (Topic) xml.getData();
     }
 
-
+    public String[] getTopicNames(AssetManager manager, String difficulty) {
+        String[] res;
+        try {
+            res = manager.list(difficulty);
+        }
+        catch (IOException e) {
+            res = null;
+        }
+        return res;
+    }
 }

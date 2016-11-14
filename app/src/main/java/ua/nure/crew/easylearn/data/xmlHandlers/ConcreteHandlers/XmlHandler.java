@@ -20,4 +20,5 @@ public class XmlHandler extends XmlElementHandler {
     protected void switchHandler(String qName, Attributes attributes) throws XmlParsingException {
         innerHandler = new TopicHandler();
     }
+
 }
