@@ -1,0 +1,10 @@
+<EasyLearn>
+    <Options>
+        <Option name="Difficulty">
+            <Value>Beginner</Value>
+            <Value>Intermediate</Value>
+            <Value>Advanced</Value>
+            <CurrentValue>Intermediate</CurrentValue>
+        </Option>
+    </Options>
+</EasyLearn>

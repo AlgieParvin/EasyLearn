@@ -22,6 +22,8 @@ public class Options implements XmlParsable {
         return options;
     }
 
+    public void addOption(Option option){ options.add(option); }
+
     @Override
     public void addData(XmlParsable part) throws ContentTypeException, InitializationException {
         if (initialized)
