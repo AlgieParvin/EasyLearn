@@ -13,12 +13,4 @@ import ua.nure.crew.easylearn.data.models.Word;
 public interface ResourceLoader {
 
     Topic loadTopic(AssetManager manager, String topicName) throws DataLoadingException;
-    /*
-<<<<<<< HEAD
-    List<Word> loadWords() throws DataLoadingException;
-
-    List<Test> loadTests() throws DataLoadingException;
-=======
-    List<Word> loadFromXML(InputStream io) throws DataLoadingException;
->>>>>>> origin/Test-tasks*/
 }

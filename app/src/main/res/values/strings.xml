@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EasyLearn</string>
+    <string name="question_example">What is the sense of life?</string>
 </resources>

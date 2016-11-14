@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ua.nure.crew.easylearn.R;
+import ua.nure.crew.easylearn.view.testTasks.TestTasksActivity;
 import ua.nure.crew.easylearn.view.vocabulary.VocabularyActivity;
 
 public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTypeViewHolder> {
@@ -41,10 +42,16 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
 
         @Override
         public void onClick(View v) {
+            Intent intent = null;
             switch (getAdapterPosition()) {
-                case 3:
-                    Intent intent = new Intent(v.getContext(), VocabularyActivity.class);
+                case 1:
+                    intent = new Intent(v.getContext(), TestTasksActivity.class);
                     v.getContext().startActivity(intent);
+                    break;
+                case 3:
+                    intent = new Intent(v.getContext(), VocabularyActivity.class);
+                    v.getContext().startActivity(intent);
+                    break;
             }
         }
     }

@@ -6,6 +6,7 @@ import ua.nure.crew.easylearn.exceptions.ContentTypeException;
 import ua.nure.crew.easylearn.exceptions.InitializationException;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,10 +14,21 @@ import java.util.List;
  */
 
 public class Question implements XmlParsable {
+
+    static private int c = 0;
+
     private boolean initialized = false;
     private List<String> answers;
     private String rightAnswer;
     private String question;
+
+    // should be deleted
+    public Question() {
+        question = "What is the sense of life?" + c;
+        c++;
+        answers = Arrays.asList("cats", "no sense", "rock n roll", "life itself");
+        rightAnswer = "no sense";
+    }
 
     public Question(String question)
     {
