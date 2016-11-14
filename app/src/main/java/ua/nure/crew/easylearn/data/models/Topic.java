@@ -36,6 +36,11 @@ public class Topic implements XmlParsable {
             }
             this.vocabulary = (Vocabulary) part;
         }
+        else if (part instanceof Topic) {
+            Topic other = (Topic) part;
+            this.vocabulary = other.vocabulary;
+            this.test = other.test;
+        }
         // Some more are coming...
         else
         {

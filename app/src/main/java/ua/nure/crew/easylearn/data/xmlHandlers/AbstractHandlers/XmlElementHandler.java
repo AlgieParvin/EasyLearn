@@ -1,5 +1,6 @@
 package ua.nure.crew.easylearn.data.xmlHandlers.AbstractHandlers;
 
+import ua.nure.crew.easylearn.data.xmlHandlers.XmlParsable;
 import ua.nure.crew.easylearn.exceptions.ContentTypeException;
 import ua.nure.crew.easylearn.exceptions.InitializationException;
 import ua.nure.crew.easylearn.exceptions.XmlParsingException;
@@ -48,9 +49,10 @@ public abstract class XmlElementHandler extends SimpleHandler {
             if (!innerHandler.isWorking())
             {
                 try {
-                    data.addData(innerHandler.getData());
+                    XmlParsable part = innerHandler.getData();
+                    data.addData(part);
                 } catch (ContentTypeException | InitializationException e) {
-                    throw new SAXException("Object constructing fail.", e);
+                    throw new SAXException("Object constructing fail." + e.getMessage(), e);
                 }
                 //addData(qName); // innerHandler.getData();
             }
