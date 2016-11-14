@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/EasyLearn.iml" filepath="$PROJECT_DIR$/.idea/EasyLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EasyLearn.iml" filepath="$PROJECT_DIR$/EasyLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/expandablerecyclerview-2.1.1/expandablerecyclerview-2.1.1.iml" filepath="$PROJECT_DIR$/expandablerecyclerview-2.1.1/expandablerecyclerview-2.1.1.iml" />
     </modules>
   </component>
 </project>
