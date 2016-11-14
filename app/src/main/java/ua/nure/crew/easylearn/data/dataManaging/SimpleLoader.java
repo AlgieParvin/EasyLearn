@@ -42,13 +42,13 @@ public class SimpleLoader implements ResourceLoader {
         return (Topic) xml.getData();
     }
 
-    public String[] getTopicNames(AssetManager manager, String difficulty) {
+    public String[] getTopicNames(AssetManager manager, String difficulty) throws DataLoadingException {
         String[] res;
         try {
             res = manager.list(difficulty);
         }
         catch (IOException e) {
-            res = null;
+            throw new DataLoadingException("Error in loading topic names on the difficulty " + difficulty + ".", e);
         }
         return res;
     }
