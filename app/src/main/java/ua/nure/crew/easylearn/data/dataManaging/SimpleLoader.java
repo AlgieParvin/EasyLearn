@@ -1,14 +1,11 @@
 package ua.nure.crew.easylearn.data.dataManaging;
 
 import java.io.IOException;
-import java.util.List;
 
 import android.content.res.AssetManager;
 import org.xml.sax.SAXException;
 import ua.nure.crew.easylearn.data.models.*;
-import ua.nure.crew.easylearn.data.xmlHandlers.ConcreteHandlers.TopicHandler;
 import ua.nure.crew.easylearn.data.xmlHandlers.ConcreteHandlers.XmlHandler;
-import ua.nure.crew.easylearn.data.xmlHandlers.XmlParsable;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 
 import javax.xml.parsers.ParserConfigurationException;

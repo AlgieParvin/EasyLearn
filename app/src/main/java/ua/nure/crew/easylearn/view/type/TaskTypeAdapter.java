@@ -18,7 +18,7 @@ import ua.nure.crew.easylearn.view.vocabulary.VocabularyActivity;
 public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTypeViewHolder> {
 
     public static class TaskTypeViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener{
+            implements View.OnClickListener {
 
         CardView mTaskTypeCardView;
         TextView mTaskTypeNameTextView;
