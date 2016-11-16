@@ -1,5 +1,6 @@
 package ua.nure.crew.easylearn.view.vocabulary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import ua.nure.crew.easylearn.R;
 import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 import ua.nure.crew.easylearn.data.models.Word;
+import ua.nure.crew.easylearn.view.type.TaskTypeActivity;
 
 public class VocabularyActivity extends AppCompatActivity {
 
@@ -26,6 +28,9 @@ public class VocabularyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_type);
 
+        Intent intent = getIntent();
+        mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
+
         mTaskTypeRecyclerView = (RecyclerView) findViewById(R.id.task_type_recycler_view);
         mTaskTypeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mTaskTypeRecyclerView.setHasFixedSize(true);
@@ -33,7 +38,7 @@ public class VocabularyActivity extends AppCompatActivity {
         //mTaskTypeList = Translation.loadData(mTopic);
         List<Word> words;
         try {
-            words = SimpleLoader.getInstance().loadTopic(getAssets(), "data").getWords();
+            words = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic).getWords();
             mTaskTypeList = new ArrayList<>(words.size());
 
             for (int i = 0; i < words.size(); i++)
@@ -44,9 +49,7 @@ public class VocabularyActivity extends AppCompatActivity {
 
         } catch (DataLoadingException e) {
             e.printStackTrace(); // Change to showing error to user!!!
-        }/* catch (IOException e) {
-            e.printStackTrace();
-        }*/
+        }
 
 
         mTaskTypeRecyclerView.setAdapter(new WordExpandableAdapter(this, mTaskTypeList));

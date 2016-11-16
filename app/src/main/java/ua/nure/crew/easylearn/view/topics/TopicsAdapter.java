@@ -2,6 +2,7 @@ package ua.nure.crew.easylearn.view.topics;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,7 +22,8 @@ import ua.nure.crew.easylearn.view.type.TaskTypeActivity;
 
 public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsViewHolder> {
 
-    private static Map<String, Integer> sTopicsImagesHashMap;
+    static private final int TOPIC_TAG = 1;
+    static private final int LEVEL_TAG = 2;
 
     private TopicsActivity mContext;
     private String mDifficulty;
@@ -40,7 +42,8 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
             mCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    handleOnClick(view.getContext(), view.getTag().toString());
+                    String tag = view.getTag().toString();
+                    handleOnClick(view.getContext(), tag);
                 }
             });
 
@@ -48,7 +51,8 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
             mImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    handleOnClick(view.getContext(), view.getTag().toString());
+                    String tag = view.getTag().toString();
+                    handleOnClick(view.getContext(), tag);
                 }
             });
 
@@ -56,7 +60,8 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
             mTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    handleOnClick(view.getContext(), view.getTag().toString());
+                    String tag = view.getTag().toString();
+                    handleOnClick(view.getContext(), tag);
                 }
             });
         }
@@ -69,12 +74,9 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
         }
     }
 
-    public TopicsAdapter(String level, Context context, String difficulty) {
+    public TopicsAdapter(Context context, String difficulty) {
         this.mContext = (TopicsActivity) context;
         mDifficulty = difficulty;
-
-        sTopicsImagesHashMap = new HashMap<>();
-        sTopicsImagesHashMap.put("Crime and Punishment", R.drawable.crime);
 
         loadTopics();
     }
@@ -90,13 +92,14 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
 
     @Override
     public void onBindViewHolder(TopicsViewHolder holder, int position) {
-        holder.mCardView.setTag(mTopics[position]);
+        String topic = mDifficulty + "/" + mTopics[position];
+        holder.mCardView.setTag(topic);
 
         holder.mTextView.setText(mTopics[position]);
-        holder.mTextView.setTag(mTopics[position]);
+        holder.mTextView.setTag(topic);
 
-        holder.mImageView.setImageResource(R.drawable.crime);
-        holder.mImageView.setTag(mTopics[position]);
+        holder.mImageView.setImageResource(mContext.sTopicsImagesHashMap.get(mTopics[position]));
+        holder.mImageView.setTag(topic);
     }
 
     @Override

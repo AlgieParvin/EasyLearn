@@ -40,7 +40,7 @@ public class TopicsFragment extends Fragment {
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.topics_recycler_view);
         rv.setHasFixedSize(true);
 
-        TopicsAdapter adapter = new TopicsAdapter(level, getActivity(), level);
+        TopicsAdapter adapter = new TopicsAdapter(getActivity(), level);
         rv.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

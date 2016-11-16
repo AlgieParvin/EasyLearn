@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import ua.nure.crew.easylearn.R;
@@ -25,10 +27,16 @@ import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 
 public class TopicsActivity extends AppCompatActivity {
 
+    HashMap<String, Integer> sTopicsImagesHashMap = new HashMap<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topics);
+
+        sTopicsImagesHashMap.put("Crime and Punishment", R.drawable.crime);
+        sTopicsImagesHashMap.put("My Family", R.drawable.family);
+        sTopicsImagesHashMap.put("Travelling", R.drawable.travel);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.topics_pager);
         TopicsPagerAdapter pagerAdapter =
@@ -67,7 +75,6 @@ public class TopicsActivity extends AppCompatActivity {
             super(fm);
             this.context = context;
         }
-
         @Override
         public int getCount() {
             return tabTitles.length;
@@ -77,11 +84,11 @@ public class TopicsActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return TopicsFragment.newInstance("Low");
+                    return TopicsFragment.newInstance("Easy");
                 case 1:
                     return TopicsFragment.newInstance("Medium");
                 case 2:
-                    return TopicsFragment.newInstance("High");
+                    return TopicsFragment.newInstance("Hard");
                 default:
                     return TopicsFragment.newInstance("Easy");
             }

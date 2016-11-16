@@ -42,17 +42,20 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
 
         @Override
         public void onClick(View v) {
+            TaskTypeActivity activity = (TaskTypeActivity) v.getContext();
             Intent intent = null;
             switch (getAdapterPosition()) {
                 case 1:
                     intent = new Intent(v.getContext(), TestTasksActivity.class);
-                    v.getContext().startActivity(intent);
                     break;
                 case 3:
                     intent = new Intent(v.getContext(), VocabularyActivity.class);
-                    v.getContext().startActivity(intent);
                     break;
+                default:
+                    intent = new Intent(v.getContext(), VocabularyActivity.class);
             }
+            intent.putExtra(TaskTypeActivity.TOPIC_TAG, activity.mTopic);
+            activity.startActivity(intent);
         }
     }
 
