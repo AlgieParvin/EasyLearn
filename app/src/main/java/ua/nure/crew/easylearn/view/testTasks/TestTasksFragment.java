@@ -1,9 +1,9 @@
 package ua.nure.crew.easylearn.view.testTasks;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,12 +25,14 @@ public class TestTasksFragment extends Fragment {
         public void onClick(View view) {
             String answer = ((Button) view).getText().toString();
             mParent.mAnswers.add(answer);
-            if (mParent.pager.getCurrentItem() == mParent.mQuestions.size() - 1) {
-                Intent intent = new Intent(mParent, TestResultsActivity.class);
-                startActivity(intent);
-            } else {
-                mParent.pager.setCurrentItem(mParent.pager.getCurrentItem() + 1);
+
+            int position = mParent.pager.getCurrentItem();
+            if (TestTasksActivity.mQuestions.get(position).isAnswerRight(answer)) {
+                mParent.mCorrectAnswers++;
+                Log.i("TEST", "" + mParent.mCorrectAnswers);
             }
+
+            mParent.pager.setCurrentItem(mParent.pager.getCurrentItem() + 1);
         }
     };
 
@@ -38,7 +40,7 @@ public class TestTasksFragment extends Fragment {
     public void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
         mParent = (TestTasksActivity) getActivity();
-        mQuestion = mParent.mQuestions.get(mParent.currentQuestion++);
+        mQuestion = mParent.mQuestions.get(mParent.mCurrentQuestion++);
         mAnswerButtons = new Button[mQuestion.getAnswers().size()];
     }
 

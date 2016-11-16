@@ -31,8 +31,6 @@ public class TestResultsActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             currentQuestion = position;
-            Log.i("PAGE", "" + position + " current = " + currentQuestion);
-
             Bundle args = new Bundle();
             args.putInt("ANSWER", position);
             TestResultsFragment fragment = new TestResultsFragment();

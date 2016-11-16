@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +15,8 @@ import ua.nure.crew.easylearn.data.models.Question;
 
 public class TestTasksActivity extends AppCompatActivity {
 
-    int currentQuestion;
+    int mCurrentQuestion;
+    int mCorrectAnswers;
 
     static List<Question> mQuestions;
     static List<String> mAnswers = new ArrayList<>();
@@ -32,13 +32,20 @@ public class TestTasksActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return mQuestions.size();
+            return mQuestions.size() + 1;
         }
 
         @Override
         public Fragment getItem(int position) {
+            if (position == getCount() - 1) {
+                return new TestFinishFragment();
+            }
             return new TestTasksFragment();
         }
+    }
+
+    void kill() {
+        finish();
     }
 
     // should be reimplemented
@@ -48,6 +55,7 @@ public class TestTasksActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
+        mCorrectAnswers = 0;
         loadQuestions();
 
         setContentView(R.layout.activity_test_tasks);
