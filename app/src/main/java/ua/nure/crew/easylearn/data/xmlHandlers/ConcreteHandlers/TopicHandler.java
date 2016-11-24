@@ -3,22 +3,30 @@ package ua.nure.crew.easylearn.data.xmlHandlers.ConcreteHandlers;
 import ua.nure.crew.easylearn.data.models.Topic;
 import ua.nure.crew.easylearn.exceptions.XmlParsingException;
 import ua.nure.crew.easylearn.data.xmlHandlers.AbstractHandlers.XmlElementHandler;
-import ua.nure.crew.easylearn.data.models.EasyLearnData;
 import org.xml.sax.Attributes;
 
 /**
  * Created by Slava on 19.10.2016.
  */
-public class XmlHandler extends XmlElementHandler {
+public class TopicHandler extends XmlElementHandler {
 
-    public XmlHandler()
-    {
+    public TopicHandler() {
+        tagName = "Topic";
         data = new Topic();
     }
 
     @Override
     protected void switchHandler(String qName, Attributes attributes) throws XmlParsingException {
-        innerHandler = new TopicHandler();
+        switch (qName)
+        {
+            case "Vocabulary":
+                innerHandler = new VocabularyHandler();
+                break;
+            case "Test":
+                innerHandler = new TestHandler();
+                break;
+            default:
+                throw new XmlParsingException("Unexpected tag type:" + qName);
+        }
     }
-
 }

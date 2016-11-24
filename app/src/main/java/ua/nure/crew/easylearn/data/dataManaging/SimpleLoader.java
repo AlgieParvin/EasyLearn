@@ -1,43 +1,20 @@
 package ua.nure.crew.easylearn.data.dataManaging;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
 
+import android.content.res.AssetManager;
 import org.xml.sax.SAXException;
+import ua.nure.crew.easylearn.data.models.*;
 import ua.nure.crew.easylearn.data.xmlHandlers.ConcreteHandlers.XmlHandler;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
-import ua.nure.crew.easylearn.data.models.EasyLearnData;
-import ua.nure.crew.easylearn.data.models.Vocabulary;
-import ua.nure.crew.easylearn.data.models.Word;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 public class SimpleLoader implements ResourceLoader {
-    private final String FILENAME = "Data.xml";
     private static ResourceLoader instance = null;
-
-    public List<Word> loadFromXML(InputStream is) throws DataLoadingException {
-        Vocabulary vocabulary;
-
-        try {
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser parser = factory.newSAXParser();
-
-            XmlHandler xml = new XmlHandler();
-            parser.parse(is, xml);
-
-            EasyLearnData data = (EasyLearnData) xml.getData();
-            vocabulary = (Vocabulary) data.getContent(0);
-        }
-        catch (SAXException | ParserConfigurationException | IOException e) {
-            throw new DataLoadingException("Error in data parsing.\n" + e.getMessage(), e);
-        }
-
-        return vocabulary.getWords();
-    }
+    private final String EXTENSION = ".xml";
 
     public static ResourceLoader getInstance()
     {
@@ -45,5 +22,33 @@ public class SimpleLoader implements ResourceLoader {
             instance = new SimpleLoader();
 
         return instance;
+    }
+
+    public Topic loadTopic(AssetManager manager, String topicName) throws DataLoadingException
+    {
+        XmlHandler xml = new XmlHandler();
+
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser parser = factory.newSAXParser();
+
+            parser.parse(manager.open(topicName + EXTENSION), xml);
+        }
+        catch (SAXException | ParserConfigurationException | IOException e) {
+            throw new DataLoadingException("Error in data parsing.\n" + e.getMessage(), e);
+        }
+
+        return (Topic) xml.getData();
+    }
+
+    public String[] getTopicNames(AssetManager manager, String difficulty) throws DataLoadingException {
+        String[] res;
+        try {
+            res = manager.list(difficulty);
+        }
+        catch (IOException e) {
+            throw new DataLoadingException("Error in loading topic names on the difficulty " + difficulty + ".", e);
+        }
+        return res;
     }
 }

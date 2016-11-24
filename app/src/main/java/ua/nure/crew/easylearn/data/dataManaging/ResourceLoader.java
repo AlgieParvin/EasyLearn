@@ -1,12 +1,13 @@
 package ua.nure.crew.easylearn.data.dataManaging;
 
-import java.io.InputStream;
-import java.util.List;
 
+import android.content.res.AssetManager;
+import ua.nure.crew.easylearn.data.models.Topic;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
-import ua.nure.crew.easylearn.data.models.Word;
 
 public interface ResourceLoader {
 
-    List<Word> loadFromXML(InputStream io) throws DataLoadingException;
+    Topic loadTopic(AssetManager manager, String topicName) throws DataLoadingException;
+
+    String[] getTopicNames(AssetManager manager, String difficulty) throws DataLoadingException;
 }

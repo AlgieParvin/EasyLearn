@@ -12,12 +12,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import ua.nure.crew.easylearn.R;
+import ua.nure.crew.easylearn.view.testTasks.TestTasksActivity;
 import ua.nure.crew.easylearn.view.vocabulary.VocabularyActivity;
 
 public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTypeViewHolder> {
 
     public static class TaskTypeViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener{
+            implements View.OnClickListener {
 
         CardView mTaskTypeCardView;
         TextView mTaskTypeNameTextView;
@@ -41,11 +42,20 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
 
         @Override
         public void onClick(View v) {
+            TaskTypeActivity activity = (TaskTypeActivity) v.getContext();
+            Intent intent = null;
             switch (getAdapterPosition()) {
+                case 1:
+                    intent = new Intent(v.getContext(), TestTasksActivity.class);
+                    break;
                 case 3:
-                    Intent intent = new Intent(v.getContext(), VocabularyActivity.class);
-                    v.getContext().startActivity(intent);
+                    intent = new Intent(v.getContext(), VocabularyActivity.class);
+                    break;
+                default:
+                    intent = new Intent(v.getContext(), VocabularyActivity.class);
             }
+            intent.putExtra(TaskTypeActivity.TOPIC_TAG, activity.mTopic);
+            activity.startActivity(intent);
         }
     }
 

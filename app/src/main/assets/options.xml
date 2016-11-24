@@ -1,10 +1,10 @@
 <EasyLearn>
     <Options>
         <Option name="Difficulty">
-            <Value>Beginner</Value>
-            <Value>Intermediate</Value>
-            <Value>Advanced</Value>
-            <CurrentValue>Intermediate</CurrentValue>
+            <Value>Easy</Value>
+            <Value>Medium</Value>
+            <Value>Hard</Value>
+            <CurrentValue>Medium</CurrentValue>
         </Option>
     </Options>
 </EasyLearn>
