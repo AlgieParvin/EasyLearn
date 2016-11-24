@@ -15,6 +15,8 @@ public class Topic implements XmlParsable {
     private boolean initialized;
     private Test test;
     private Vocabulary vocabulary;
+    private Videos videos;
+    private Rebuses rebuses;
 
     public Topic() {
     }
@@ -35,11 +37,20 @@ public class Topic implements XmlParsable {
                 throw new ContentTypeException("More than one vocabulary in a topic.");
             }
             this.vocabulary = (Vocabulary) part;
-        }
-        else if (part instanceof Topic) {
+        } else if (part instanceof Topic) {
             Topic other = (Topic) part;
             this.vocabulary = other.vocabulary;
             this.test = other.test;
+        } else if (part instanceof Videos) {
+            if (videos != null) {
+                throw new ContentTypeException("More than one video collection in a topic.");
+            }
+            this.videos = (Videos) part;
+        } else if (part instanceof Rebuses) {
+            if (rebuses != null) {
+                throw new ContentTypeException("More than one rebus collection in a topic.");
+            }
+            this.rebuses = (Rebuses) part;
         }
         // Some more are coming...
         else
@@ -60,4 +71,10 @@ public class Topic implements XmlParsable {
     public List<Word> getWords() {
         return vocabulary.getWords();
     }
+
+    public List<Video> getVideos() {
+        return videos.getVideos();
+    }
+
+    public List<Rebus> getRebuses() { return rebuses.getRebuses(); }
 }

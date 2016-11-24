@@ -25,6 +25,12 @@ public class TopicHandler extends XmlElementHandler {
             case "Test":
                 innerHandler = new TestHandler();
                 break;
+            case "Videos":
+                innerHandler = new VideosHandler();
+                break;
+            case "Rebuses":
+                innerHandler = new RebusesHandler();
+                break;
             default:
                 throw new XmlParsingException("Unexpected tag type:" + qName);
         }

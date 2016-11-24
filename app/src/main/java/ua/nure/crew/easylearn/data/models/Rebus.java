@@ -12,6 +12,8 @@ public class Rebus implements XmlParsable {
     private String correctAnswer;
     private boolean initialized;
 
+    public Rebus() {}
+
     public Rebus(String imagePath,
                  String correctAnswer)
     {
