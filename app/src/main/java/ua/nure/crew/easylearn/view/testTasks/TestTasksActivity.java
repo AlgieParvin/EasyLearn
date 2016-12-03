@@ -1,5 +1,6 @@
 package ua.nure.crew.easylearn.view.testTasks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,9 +12,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import ua.nure.crew.easylearn.R;
+import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
 import ua.nure.crew.easylearn.data.models.Question;
+import ua.nure.crew.easylearn.data.models.Topic;
+import ua.nure.crew.easylearn.exceptions.DataLoadingException;
+import ua.nure.crew.easylearn.view.type.TaskTypeActivity;
 
 public class TestTasksActivity extends AppCompatActivity {
+
+
+    String mTopic;
 
     int mCurrentQuestion;
     int mCorrectAnswers;
@@ -50,7 +58,16 @@ public class TestTasksActivity extends AppCompatActivity {
 
     // should be reimplemented
     void loadQuestions() {
-        mQuestions = Arrays.asList(new Question(), new Question(), new Question(), new Question());
+
+        Intent intent = getIntent();
+        mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
+        try {
+            Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
+            mQuestions = t.getTest();
+        } catch (DataLoadingException e) {
+            e.printStackTrace(); // TODO: Change to showing error to user!!!
+        }/**/
+        // mQuestions = Arrays.asList(new Question(), new Question(), new Question(), new Question());
     }
 
     public void onCreate(Bundle savedInstanceBundle) {
