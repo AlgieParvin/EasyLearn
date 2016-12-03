@@ -13,6 +13,7 @@ import java.util.List;
 
 import ua.nure.crew.easylearn.R;
 import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
+import ua.nure.crew.easylearn.data.models.Topic;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 import ua.nure.crew.easylearn.data.models.Word;
 import ua.nure.crew.easylearn.view.type.TaskTypeActivity;
@@ -38,7 +39,8 @@ public class VocabularyActivity extends AppCompatActivity {
         //mTaskTypeList = Translation.loadData(mTopic);
         List<Word> words;
         try {
-            words = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic).getWords();
+            Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
+            words = t.getWords();
             mTaskTypeList = new ArrayList<>(words.size());
 
             for (int i = 0; i < words.size(); i++)
@@ -48,7 +50,7 @@ public class VocabularyActivity extends AppCompatActivity {
             }
 
         } catch (DataLoadingException e) {
-            e.printStackTrace(); // Change to showing error to user!!!
+            e.printStackTrace(); // TODO: Change to showing error to user!!!
         }
 
 

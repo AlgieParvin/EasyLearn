@@ -1,22 +1,14 @@
 package ua.nure.crew.easylearn;
 
 import org.junit.Test;
-import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
-import ua.nure.crew.easylearn.data.models.Word;
-import ua.nure.crew.easylearn.exceptions.DataLoadingException;
-import ua.nure.crew.easylearn.view.vocabulary.Translation;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class MyUnitTest {
     @Test
     public void loading_isCorrect() throws Exception {
-        /*List<Translation> mTaskTypeList;
-
+        /*
+        List<Translation> mTaskTypeList;
 
         //mTaskTypeList = Translation.loadData(mTopic);
         List<Word> words;
@@ -31,7 +23,8 @@ public class MyUnitTest {
             }
 
         } catch (DataLoadingException e) {
-            e.printStackTrace(); // TODO: Change to showing error to user!!!
-        }*/
+            e.printStackTrace();
+        }
+        */
     }
 }
