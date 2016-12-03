@@ -55,7 +55,9 @@ public class TestTasksFragment extends Fragment {
         mAnswerButtons[0] = (Button) view.findViewById(R.id.tests_first_answer_button);
         mAnswerButtons[1] = (Button) view.findViewById(R.id.tests_second_answer_button);
         mAnswerButtons[2] = (Button) view.findViewById(R.id.tests_third_answer_button);
-        mAnswerButtons[3] = (Button) view.findViewById(R.id.tests_fourth_answer_button);
+        if (mQuestion.getAnswers().size() == 4) {
+            mAnswerButtons[3] = (Button) view.findViewById(R.id.tests_fourth_answer_button);
+        }
 
         for (int i = 0; i < mQuestion.getAnswers().size(); i++) {
             mAnswerButtons[i].setText(mQuestion.getAnswers().get(i));

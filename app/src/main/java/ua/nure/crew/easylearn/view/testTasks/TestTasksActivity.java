@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,7 +58,6 @@ public class TestTasksActivity extends AppCompatActivity {
         finish();
     }
 
-    // should be reimplemented
     void loadQuestions() {
 
         Intent intent = getIntent();
@@ -65,9 +66,8 @@ public class TestTasksActivity extends AppCompatActivity {
             Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
             mQuestions = t.getTest();
         } catch (DataLoadingException e) {
-            e.printStackTrace(); // TODO: Change to showing error to user!!!
-        }/**/
-        // mQuestions = Arrays.asList(new Question(), new Question(), new Question(), new Question());
+            Toast.makeText(this, "Unfortunately the test is unaccessible", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void onCreate(Bundle savedInstanceBundle) {

@@ -37,6 +37,8 @@ public class TopicsActivity extends AppCompatActivity {
         sTopicsImagesHashMap.put("Crime and Punishment", R.drawable.crime);
         sTopicsImagesHashMap.put("My Family", R.drawable.family);
         sTopicsImagesHashMap.put("Travelling", R.drawable.travel);
+        sTopicsImagesHashMap.put("The Universe", R.drawable.universe);
+        sTopicsImagesHashMap.put("Wars and weapons", R.drawable.wars_and_weapons);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.topics_pager);
         TopicsPagerAdapter pagerAdapter =
