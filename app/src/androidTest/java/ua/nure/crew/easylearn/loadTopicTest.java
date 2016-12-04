@@ -2,29 +2,19 @@ package ua.nure.crew.easylearn;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
-import junit.framework.TestResult;
-import org.xml.sax.SAXException;
 import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
 import ua.nure.crew.easylearn.data.models.Question;
 import ua.nure.crew.easylearn.data.models.Topic;
 import ua.nure.crew.easylearn.data.models.Word;
-import ua.nure.crew.easylearn.data.xmlHandlers.ConcreteHandlers.XmlHandler;
-import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
-import java.util.concurrent.SynchronousQueue;
 
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
-public class ApplicationTest extends ApplicationTestCase<Application> {
+public class loadTopicTest extends ApplicationTestCase<Application> {
 
-    public ApplicationTest() throws Exception {
+    public loadTopicTest() throws Exception {
         super(Application.class);
     }
 
@@ -35,7 +25,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
 
         Topic t = SimpleLoader.getInstance().loadTopic(
                 getContext().getAssets(),
-                "Medium/Crime and Punishment");
+                "Hard/Wars and weapons");
 
         List<Question> questionList = t.getTest();
         Question first = questionList.get(0);
