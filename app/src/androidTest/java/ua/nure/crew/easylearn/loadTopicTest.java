@@ -39,14 +39,14 @@ public class loadTopicTest extends ApplicationTestCase<Application> {
         testTest(t.getTest());
         testVocabulary(t.getWords());
 
-        /*Video v = t.getVideos().get(0);
+        Video v = t.getVideos().get(0);
         String url = v.getVideoUrl();
         System.out.println(url);
 
         testTest(v.getTest().getQuestions());
-        testVocabulary(v.getVocabulary().getWords());*/
+        testVocabulary(v.getVocabulary().getWords()); /**/
 
-        testRebuses();
+        testRebuses(RebusLoader.getInstance());
     }
 
     private void testTest(List<Question> questionList) {
@@ -73,8 +73,8 @@ public class loadTopicTest extends ApplicationTestCase<Application> {
         }
     }
 
-    private void testRebuses() throws IOException {
-        Rebuses re = RebusLoader.getInstance().loadRebuses(getContext().getAssets(), TOPIC_NAME);
+    private void testRebuses(RebusLoader loader) throws IOException {
+        Rebuses re = loader.loadRebuses(getContext().getAssets(), TOPIC_NAME);
 
         Rebus r = re.getRebuses().get(0);
 
