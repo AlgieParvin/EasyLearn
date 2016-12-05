@@ -33,7 +33,8 @@ public class RebusLoader {
             // throw new DataLoadingException("Error in rebus loading:\n" + e.getMessage(), e);
         }
         for (String rebus : rebusList) {
-            String correctAnswer = rebus.split(".")[0];
+            String[] parts = rebus.split("\\.");
+            String correctAnswer = parts[0];
             Rebus toAdd = new Rebus(REBUS_FOLDER + topicName + rebus, correctAnswer);
             res.addRebus(toAdd);
         }
