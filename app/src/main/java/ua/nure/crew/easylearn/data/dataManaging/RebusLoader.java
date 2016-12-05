@@ -35,7 +35,7 @@ public class RebusLoader {
         for (String rebus : rebusList) {
             String[] parts = rebus.split("\\.");
             String correctAnswer = parts[0];
-            Rebus toAdd = new Rebus(REBUS_FOLDER + topicName + rebus, correctAnswer);
+            Rebus toAdd = new Rebus(REBUS_FOLDER + topicName + "/" + rebus, correctAnswer);
             res.addRebus(toAdd);
         }
         return res;
