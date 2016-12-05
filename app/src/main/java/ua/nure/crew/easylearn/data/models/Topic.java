@@ -1,6 +1,5 @@
 package ua.nure.crew.easylearn.data.models;
 
-import android.provider.UserDictionary;
 import ua.nure.crew.easylearn.data.xmlHandlers.XmlParsable;
 import ua.nure.crew.easylearn.exceptions.ContentTypeException;
 import ua.nure.crew.easylearn.exceptions.InitializationException;
@@ -16,7 +15,7 @@ public class Topic implements XmlParsable {
     private Test test;
     private Vocabulary vocabulary;
     private Videos videos;
-    private Rebuses rebuses;
+    //private Rebuses rebuses;
 
     public Topic() {
     }
@@ -46,12 +45,12 @@ public class Topic implements XmlParsable {
                 throw new ContentTypeException("More than one video collection in a topic.");
             }
             this.videos = (Videos) part;
-        } else if (part instanceof Rebuses) {
+        } /*else if (part instanceof Rebuses) {
             if (rebuses != null) {
                 throw new ContentTypeException("More than one rebus collection in a topic.");
             }
             this.rebuses = (Rebuses) part;
-        }
+        }*/
         // Some more are coming...
         else
         {
@@ -76,5 +75,5 @@ public class Topic implements XmlParsable {
         return videos.getVideos();
     }
 
-    public List<Rebus> getRebuses() { return rebuses.getRebuses(); }
+    /*public List<Rebus> getRebuses() { return rebuses.getRebuses(); }*/
 }

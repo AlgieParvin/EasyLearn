@@ -24,7 +24,7 @@
             <Definition>Someone who steals from a shop.</Definition>
             <Example>Many shops have cameras to prevent shoplifters from stealing things.</Example>
         </Word>
-        <Word english="Arson">
+        <Word english="Fine">
             <Spelling>faɪn</Spelling>
             <Translation>штраф</Translation>
             <Definition>A sum of money exacted as a penalty by a court of law or other authority.</Definition>
@@ -223,4 +223,131 @@
         </Question>
     </Test>
 
+    <Videos>
+        <Video videoUrl="https://www.youtube.com/v/uUPpkZk8pFg?autoplay=1&amp;start=6655&amp;end=6741&amp;controls=1&amp;version=3">
+            <Vocabulary>
+                <Word english="Evidence">
+                    <Spelling>'evɪd(ə)n(t)s</Spelling>
+                    <Translation>арест</Translation>
+                    <Definition>The available body of facts or information indicating whether a belief or proposition is true or valid.</Definition>
+                    <Example>The study finds little evidence of overt discrimination.</Example>
+                </Word>
+                <Word english="Judge">
+                    <Spelling>'ʤʌʤ</Spelling>
+                    <Translation>судья</Translation>
+                    <Definition>A public officer appointed to decide cases in a law court.</Definition>
+                    <Example>“Keep silent!” - said the judge to the defendant.</Example>
+                </Word>
+                <Word english="Assault">
+                    <Spelling>ə'sɔːlt</Spelling>
+                    <Translation>нападение</Translation>
+                    <Definition>A physical attack.</Definition>
+                    <Example>He admitted an assault and two thefts.</Example>
+                </Word>
+                <Word english="Statement">
+                    <Spelling>'steɪtmənt</Spelling>
+                    <Translation>показание</Translation>
+                    <Definition>A formal account of events given by a witness, defendant, or other party to the police or in a court of law.</Definition>
+                    <Example>She made a statement to the police.</Example>
+                </Word>
+                <Word english="Witness">
+                    <Spelling>'wɪtnəs</Spelling>
+                    <Translation>свидетель</Translation>
+                    <Definition>a person giving sworn testimony to a court of law or the police.</Definition>
+                    <Example>A murder witness was giving testimony in court.</Example>
+                </Word>
+                <Word english="Defendant">
+                    <Spelling>dɪ'fendənt</Spelling>
+                    <Translation>ответчик</Translation>
+                    <Definition>an individual, company, or institution sued or accused in a court of law</Definition>
+                    <Example>A defendant was convicted and sentenced to 5 years of prison.</Example>
+                </Word>
+                <Word english="Guilty">
+                    <Spelling>'gɪltɪ</Spelling>
+                    <Translation>виновный</Translation>
+                    <Definition>culpable of or responsible for a specified wrongdoing</Definition>
+                    <Example>If a person is convicted, it means that person is found guilty of a certain wrongdoing by the court.</Example>
+                </Word>
+                <Word english="Second-degree felony">
+                    <Spelling>'sek(ə)nd dɪ'griː kraɪm</Spelling>
+                    <Translation>«преступление второй степени»(US)</Translation>
+                    <Translation>преступление с отягощающими факторами.</Translation>
+                    <Definition>a serious crime that usually is punished by a significant prison term and can also include a significant fine.</Definition>
+                    <Example>The minimum sentence for committing a second-degree felony is 4 years, the maximum is around 15 years.</Example>
+                </Word>
+                <Word english="Lawfully">
+                    <Spelling>'lɔːf(ə)lɪ</Spelling>
+                    <Spelling>'lɔːfulɪ</Spelling>
+                    <Translation>законно</Translation>
+                    <Translation>правомерно</Translation>
+                    <Definition>complying with and being not against the law.</Definition>
+                    <Example>The suspect was lawfully arrested by the police.</Example>
+                </Word>
+                <Word english="Opposing counsel">
+                    <Spelling>ə'pəuzɪŋ 'kaun(t)s(ə)l</Spelling>
+                    <Translation>адвокат противной стороны</Translation>
+                    <Definition>Legal representative of the other side in the court.</Definition>
+                    <Example>The plaintiff's legal counsel and the defendant's legal counsel are opposing counsel because they are on the opposite sides of the case. </Example>
+                </Word>
+                <Word english="Baton">
+                    <Spelling>'bæt(ə)n</Spelling>
+                    <Translation>Полицейская дубинка</Translation>
+                    <Definition>a police officer's truncheon</Definition>
+                    <Example>Most police officers carry a baton as a non-lethal law enforcement weapon. </Example>
+                </Word>
+                <Word english="Restrain">
+                    <Spelling>riː'streɪn</Spelling>
+                    <Translation>Задерживать</Translation>
+                    <Translation>Удерживать</Translation>
+                    <Definition>deprive (someone) of freedom of movement or personal liberty</Definition>
+                    <Example>Two policemen had to restrain a man in order to prevent a violent fight. </Example>
+                </Word>
+                <Word english="Prosecutor">
+                    <Spelling>'prɔsɪkjuːtə</Spelling>
+                    <Translation>Обвинитель</Translation>
+                    <Translation>Прокурор</Translation>
+                    <Definition>A lawyer who conducts the case against a defendant in a criminal court</Definition>
+                    <Example>In court a prosecutor brings charges against a defendant and tries to prove that defendant is guilty. </Example>
+                </Word>
+                <Word english="Alleged">
+                    <Spelling>ə'leʤ(ə)d</Spelling>
+                    <Translation>Предполагаемый</Translation>
+                    <Translation>Не доказанный</Translation>
+                    <Definition>said, without proof</Definition>
+                    <Example>Rumors continued to be rampant about his alleged culpability in Billy Langstrom's death. </Example>
+                </Word>
+            </Vocabulary>
+            <Test>
+                <Question question="What is the correct way of addressing a judge in court?">
+                    <Wrong>“Your Highness”</Wrong>
+                    <Wrong>by name</Wrong>
+                    <Right>“Your Honor” </Right>
+                    <Wrong>“Mr/Mrs/Ms Judge”</Wrong>
+                </Question>
+                <Question question="Who was making a statement?">
+                    <Wrong>Judge</Wrong>
+                    <Right>Prosecutor</Right>
+                    <Wrong>Defendant</Wrong>
+                    <Wrong>Witness</Wrong>
+                </Question>
+                <Question question="What crime the defendant is accused of?">
+                    <Right>murder</Right>
+                    <Wrong>robbery</Wrong>
+                    <Wrong>mugging</Wrong>
+                    <Wrong>assault</Wrong>
+                </Question>
+                <Question question="According to the statement, who was the victim?">
+                    <Right>a law enforcement officer</Right>
+                    <Wrong>defendant’s friend</Wrong>
+                    <Wrong>defendant’s relative</Wrong>
+                    <Wrong>it’s unknown</Wrong>
+                </Question>
+                <Question question="According to witnesses’ testimonies, was the victim assaulting someone prior to being attacked?">
+                    <Right>No</Right>
+                    <Wrong>Yes</Wrong>
+                    <Wrong>It’s unknown</Wrong>
+                </Question>
+            </Test>
+        </Video>
+    </Videos>
 </Topic>
