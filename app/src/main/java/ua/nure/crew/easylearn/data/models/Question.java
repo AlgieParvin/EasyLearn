@@ -15,19 +15,15 @@ import java.util.List;
 
 public class Question implements XmlParsable {
 
-    static private int c = 0;
-
     private boolean initialized = false;
     private List<String> answers;
     private String rightAnswer;
     private String question;
 
-    // should be deleted
-    public Question() {
-        question = "What is the sense of life?" + c;
-        c++;
-        answers = Arrays.asList("cats", "no sense", "rock n roll", "life itself");
-        rightAnswer = "no sense";
+    public Question(String question, List<String> answers, String rightAnswer) {
+        this.question = question;
+        this.answers = answers;
+        this.rightAnswer = rightAnswer;
     }
 
     public Question(String question)
@@ -50,6 +46,8 @@ public class Question implements XmlParsable {
     {
         return question;
     }
+
+    public String getRightAnswer() { return rightAnswer; }
 
     @Override
     public void addData(XmlParsable part) throws ContentTypeException, InitializationException {

@@ -1,6 +1,8 @@
 package ua.nure.crew.easylearn.view.topics;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -17,22 +19,24 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 
 import ua.nure.crew.easylearn.R;
 import ua.nure.crew.easylearn.data.dataManaging.OptionsLoader;
 import ua.nure.crew.easylearn.data.models.Option;
 import ua.nure.crew.easylearn.data.models.Options;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
+import ua.nure.crew.easylearn.view.enterTest.DialogueActivity;
 
 public class TopicsActivity extends AppCompatActivity {
+
+    public static final String LEVEL_PREF = "LEVEL_PREF";
 
     HashMap<String, Integer> sTopicsImagesHashMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topics);
+        setContentView(R.layout.topics_activity);
 
         sTopicsImagesHashMap.put("Crime and Punishment", R.drawable.crime);
         sTopicsImagesHashMap.put("My Family", R.drawable.family);
@@ -52,6 +56,17 @@ public class TopicsActivity extends AppCompatActivity {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
             tab.setCustomView(pagerAdapter.getTabView(i));
         }
+
+        // getting info about previously chosen level
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        String level = sp.getString(LEVEL_PREF, "None");
+
+        // starting a enter_test_dialogue about entry test if 'level' equals to None
+        if (level.equals("None")) {
+            level = "Easy";
+            Intent intent = new Intent(this, DialogueActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -70,12 +85,21 @@ public class TopicsActivity extends AppCompatActivity {
 
     class TopicsPagerAdapter extends FragmentPagerAdapter {
 
+        Options options;
         String tabTitles[] = new String[] { "Easy", "Medium", "High" };
         Context context;
 
         public TopicsPagerAdapter(FragmentManager fm, Context context) {
             super(fm);
             this.context = context;
+            try {
+                options = OptionsLoader.getInstance().loadOptions(getAssets().open("options"));
+                for (Option opt : options.getOptions()) {
+                    Log.i("OPTION", opt.getCurrentValue());
+                }
+            } catch (IOException | DataLoadingException e) {
+                Log.i("OPTIONS", "can't load options from xml");
+            }
         }
         @Override
         public int getCount() {

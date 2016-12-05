@@ -62,6 +62,17 @@
             android:layout_below="@+id/tests_results_correct_answers"
             android:layout_toRightOf="@id/tests_results_incorrect_label" />
 
+        <TextView
+            android:id="@+id/tests_results_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="right"
+            android:textSize="24sp"
+            android:layout_marginBottom="10dp"
+            android:gravity="right"
+            android:layout_below="@+id/tests_results_incorrect_answers" />
+
         <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"

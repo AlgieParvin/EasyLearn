@@ -12,7 +12,7 @@ import ua.nure.crew.easylearn.R;
 
 public class TaskTypeActivity extends AppCompatActivity {
 
-    public static final String TOPIC_TAG = "TOPIC";
+    public static final String TOPIC_TAG = "TASK_TYPE_ACTIVITY_TOPIC";
 
     String mTopic;
     List<TaskType> mTaskTypeList;
@@ -21,7 +21,7 @@ public class TaskTypeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task_type);
+        setContentView(R.layout.task_type_activity);
 
         Intent intent = getIntent();
         mTopic = intent.getStringExtra(TOPIC_TAG);

@@ -1,6 +1,5 @@
 package ua.nure.crew.easylearn.data.models;
 
-
 import  ua.nure.crew.easylearn.exceptions.ContentTypeException;
 import  ua.nure.crew.easylearn.exceptions.InitializationException;
 import  ua.nure.crew.easylearn.exceptions.InvalidValueException;

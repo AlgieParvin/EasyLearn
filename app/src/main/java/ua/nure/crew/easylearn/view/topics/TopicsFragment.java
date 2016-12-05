@@ -35,7 +35,7 @@ public class TopicsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_topics, container, false);
+        View rootView = inflater.inflate(R.layout.topics_fragment, container, false);
 
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.topics_recycler_view);
         rv.setHasFixedSize(true);
