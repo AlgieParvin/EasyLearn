@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">EasyLearn</string>
     <string name="question_example">What is the sense of life?</string>
-    <string name="start_test">Желаете пройти тестирование на уровень?</string>
-    <string name="no">Нет</string>
-    <string name="yes">Да</string>
+    <string name="start_test">Would you like to pass an entry testing?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="rebus_clear_button_text">Clear</string>
+    <string name="rebus_answer_button_text">Check</string>
 </resources>

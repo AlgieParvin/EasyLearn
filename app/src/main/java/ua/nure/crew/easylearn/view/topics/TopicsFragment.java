@@ -12,7 +12,7 @@ import ua.nure.crew.easylearn.R;
 
 public class TopicsFragment extends Fragment {
 
-    public final static String LEVEL_TAG = "LEVEL";
+    public final static String LEVEL_TAG = "TOPICS_FRAGMENT_LEVEL";
     private String level;
 
     public TopicsFragment() { }

@@ -22,6 +22,7 @@
         <activity
             android:name=".view.enterTest.DialogueActivity"
             android:theme="@android:style/Theme.Material.Light.Dialog" />
+        <activity android:name=".view.rebuses.RebusesActivity" />
 
     </application>
 

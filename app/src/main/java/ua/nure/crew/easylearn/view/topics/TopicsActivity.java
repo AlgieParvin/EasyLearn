@@ -1,5 +1,6 @@
 package ua.nure.crew.easylearn.view.topics;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,7 +19,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import ua.nure.crew.easylearn.R;
 import ua.nure.crew.easylearn.data.dataManaging.OptionsLoader;
@@ -26,10 +29,17 @@ import ua.nure.crew.easylearn.data.models.Option;
 import ua.nure.crew.easylearn.data.models.Options;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 import ua.nure.crew.easylearn.view.enterTest.DialogueActivity;
+import ua.nure.crew.easylearn.view.testTasks.TestTasksActivity;
 
 public class TopicsActivity extends AppCompatActivity {
 
-    public static final String LEVEL_PREF = "LEVEL_PREF";
+    public static final String LEVEL_PREF = "TOPICS_ACTIVITY_LEVEL_PREF";
+
+    public static final String EASY = "Easy";
+    public static final String MEDIUM = "Medium";
+    public static final String HARD = "Hard";
+
+    ViewPager viewPager;
 
     HashMap<String, Integer> sTopicsImagesHashMap = new HashMap<>();
 
@@ -44,7 +54,7 @@ public class TopicsActivity extends AppCompatActivity {
         sTopicsImagesHashMap.put("The Universe", R.drawable.universe);
         sTopicsImagesHashMap.put("Wars and weapons", R.drawable.wars_and_weapons);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.topics_pager);
+        viewPager = (ViewPager) findViewById(R.id.topics_pager);
         TopicsPagerAdapter pagerAdapter =
                 new TopicsPagerAdapter(getSupportFragmentManager(), TopicsActivity.this);
         viewPager.setAdapter(pagerAdapter);
@@ -63,9 +73,10 @@ public class TopicsActivity extends AppCompatActivity {
 
         // starting a enter_test_dialogue about entry test if 'level' equals to None
         if (level.equals("None")) {
-            level = "Easy";
             Intent intent = new Intent(this, DialogueActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent, 1);
+        } else {
+            setLevel(level);
         }
     }
 
@@ -86,7 +97,7 @@ public class TopicsActivity extends AppCompatActivity {
     class TopicsPagerAdapter extends FragmentPagerAdapter {
 
         Options options;
-        String tabTitles[] = new String[] { "Easy", "Medium", "High" };
+        String tabTitles[] = new String[] { EASY, MEDIUM, HARD };
         Context context;
 
         public TopicsPagerAdapter(FragmentManager fm, Context context) {
@@ -110,13 +121,13 @@ public class TopicsActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return TopicsFragment.newInstance("Easy");
+                    return TopicsFragment.newInstance(EASY);
                 case 1:
-                    return TopicsFragment.newInstance("Medium");
+                    return TopicsFragment.newInstance(MEDIUM);
                 case 2:
-                    return TopicsFragment.newInstance("Hard");
+                    return TopicsFragment.newInstance(HARD);
                 default:
-                    return TopicsFragment.newInstance("Easy");
+                    return TopicsFragment.newInstance(EASY);
             }
         }
 
@@ -131,5 +142,24 @@ public class TopicsActivity extends AppCompatActivity {
             tv.setText(tabTitles[position]);
             return tab;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                String level = intent.getStringExtra(TestTasksActivity.LEVEL_TAG);
+                setLevel(level);
+                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString(LEVEL_PREF, level);
+                editor.commit();
+            }
+        }
+    }
+
+    public void setLevel(String level) {
+        List<String> levels = Arrays.asList(EASY, MEDIUM, HARD);
+        viewPager.setCurrentItem(levels.indexOf(level));
     }
 }

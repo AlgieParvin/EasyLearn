@@ -60,7 +60,7 @@ public class WatchMistakesActivity extends AppCompatActivity {
         loadQuestions(args.getString(TestTasksActivity.TOPIC_TAG));
         mAnswers = args.getStringArrayList(TestTasksActivity.ANSWERS);
 
-        setContentView(R.layout.test_tasks_activity);
+        setContentView(R.layout.tests_activity);
 
         mPager = (NonscrollableViewPager) findViewById(R.id.test_tasks_pager);
         adapter = new WatchMistakesActivity.TestTasksAdapter(getSupportFragmentManager());

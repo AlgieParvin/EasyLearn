@@ -3,6 +3,7 @@ package ua.nure.crew.easylearn.view.type;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ua.nure.crew.easylearn.R;
+import ua.nure.crew.easylearn.view.rebuses.RebusesActivity;
 import ua.nure.crew.easylearn.view.testTasks.TestTasksActivity;
 import ua.nure.crew.easylearn.view.vocabulary.VocabularyActivity;
 
@@ -45,6 +47,9 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
             TaskTypeActivity activity = (TaskTypeActivity) v.getContext();
             Intent intent = null;
             switch (getAdapterPosition()) {
+                case 0:
+                    intent = new Intent(v.getContext(), RebusesActivity.class);
+                    break;
                 case 1:
                     intent = new Intent(v.getContext(), TestTasksActivity.class);
                     break;

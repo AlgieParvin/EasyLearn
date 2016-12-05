@@ -1,6 +1,8 @@
 package ua.nure.crew.easylearn.data.dataManaging;
 
 import android.content.res.AssetManager;
+import android.util.Log;
+
 import ua.nure.crew.easylearn.data.models.Rebus;
 import ua.nure.crew.easylearn.data.models.Rebuses;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
@@ -33,8 +35,10 @@ public class RebusLoader {
             // throw new DataLoadingException("Error in rebus loading:\n" + e.getMessage(), e);
         }
         for (String rebus : rebusList) {
-            String correctAnswer = rebus.split(".")[0];
-            Rebus toAdd = new Rebus(REBUS_FOLDER + topicName + rebus, correctAnswer);
+            Log.i("REBUS", rebus);
+            String correctAnswer = rebus.split("\\.")[0];
+            Log.i("CORRECT_ANSWER", correctAnswer);
+            Rebus toAdd = new Rebus(REBUS_FOLDER + topicName + "/" + rebus, correctAnswer);
             res.addRebus(toAdd);
         }
         return res;

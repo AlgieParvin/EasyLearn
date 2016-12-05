@@ -2,6 +2,8 @@ package ua.nure.crew.easylearn.view.enterTest;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -19,7 +21,10 @@ public class DialogueActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
         setContentView(R.layout.enter_test_dialogue);
 
         yesButton = (Button) findViewById(R.id.enter_testing_yes);
@@ -27,10 +32,11 @@ public class DialogueActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DialogueActivity.this, TestTasksActivity.class);
+
+                // ! for now 'Crime and Punishment';
                 intent.putExtra(TaskTypeActivity.TOPIC_TAG, "Medium/Crime and Punishment");
                 intent.putExtra(TestTasksActivity.PURPOSE_TAG, TestTasksActivity.ENTRY);
-                startActivity(intent);
-                finish();
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -41,5 +47,18 @@ public class DialogueActivity extends Activity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                String level = intent.getStringExtra(TestTasksActivity.LEVEL_TAG);
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra(TestTasksActivity.LEVEL_TAG, level);
+                setResult(Activity.RESULT_OK, returnIntent);
+                finish();
+            }
+        }
     }
 }

@@ -35,9 +35,21 @@
             android:layout_marginLeft="16dp"
             android:layout_gravity="left"
             android:textSize="24sp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="30dp"
             android:layout_below="@id/tests_results_correct_label"
             android:text="Wrong answers:" />
+
+        <TextView
+            android:id="@+id/tests_results_level_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="left"
+            android:textSize="24sp"
+            android:layout_marginBottom="10dp"
+            android:gravity="right"
+            android:layout_below="@+id/tests_results_incorrect_answers"
+            android:text="Level:"/>
 
         <TextView
             android:id="@+id/tests_results_correct_answers"
@@ -57,7 +69,7 @@
             android:layout_marginRight="16dp"
             android:layout_gravity="right"
             android:textSize="24sp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="30dp"
             android:gravity="right"
             android:layout_below="@+id/tests_results_correct_answers"
             android:layout_toRightOf="@id/tests_results_incorrect_label" />
@@ -71,7 +83,8 @@
             android:textSize="24sp"
             android:layout_marginBottom="10dp"
             android:gravity="right"
-            android:layout_below="@+id/tests_results_incorrect_answers" />
+            android:layout_below="@+id/tests_results_incorrect_answers"
+            android:layout_toRightOf="@id/tests_results_level_label"/>
 
         <RelativeLayout
             android:orientation="horizontal"

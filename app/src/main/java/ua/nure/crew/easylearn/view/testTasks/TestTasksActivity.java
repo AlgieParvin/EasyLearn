@@ -1,11 +1,13 @@
 package ua.nure.crew.easylearn.view.testTasks;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ public class TestTasksActivity extends AppCompatActivity {
     public static final String TOPIC_TAG = "TEST_TASKS_ACTIVITY_TOPIC";
     public static final String PURPOSE_TAG = "TEST_TASKS_ACTIVITY_PURPOSE";
 
-    public static final String ENTRY = "TEST_TASKS_ACTIVITY_ENTER";
+    public static final String ENTRY = "TEST_TASKS_ACTIVITY_ENTRY";
     public static final String TEST = "TEST_TASKS_ACTIVITY_TEST";
     public static final String VIDEOS = "TEST_TASKS_ACTIVITY_VIDEOS";
 
@@ -34,6 +36,8 @@ public class TestTasksActivity extends AppCompatActivity {
     public static final String CORRECT_ANSWER = "TEST_TASKS_ACTIVITY_CORRECT_ANSWER";
     public static final String CHOSEN_ANSWER = "TEST_TASKS_ACTIVITY_CHOSEN_ANSWER";
 
+    public static final String LEVEL_TAG = "TEST_TASKS_ACTIVITY_LEVEL_TAG";
+
     // mPurpose shows whether this activity is used for simple testing, enter testing or as part
     // of a video task
     // it can be assigned to ENTRY, TEST or VIDEOS
@@ -41,7 +45,6 @@ public class TestTasksActivity extends AppCompatActivity {
 
     String mTopic;
 
-    int mCurrentQuestion;
     int mCorrectAnswers;
 
     List<Question> mQuestions;
@@ -82,6 +85,13 @@ public class TestTasksActivity extends AppCompatActivity {
         pager.setCurrentItem(position + 1);
     }
 
+    void end(String level) {
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra(LEVEL_TAG, level);
+        setResult(Activity.RESULT_OK, returnIntent);
+        finish();
+    }
+
     void loadQuestions() {
         try {
             Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
@@ -105,7 +115,7 @@ public class TestTasksActivity extends AppCompatActivity {
             mPurpose = TEST;
         }
 
-        setContentView(R.layout.test_tasks_activity);
+        setContentView(R.layout.tests_activity);
 
         pager = (NonscrollableViewPager) findViewById(R.id.test_tasks_pager);
         adapter = new TestTasksAdapter(getSupportFragmentManager());

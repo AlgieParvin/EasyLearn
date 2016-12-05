@@ -3,6 +3,7 @@ package ua.nure.crew.easylearn.view.testTasks;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ua.nure.crew.easylearn.R;
+import ua.nure.crew.easylearn.view.topics.TopicsActivity;
 
 public class TestResultsFragment extends Fragment {
 
@@ -28,6 +30,7 @@ public class TestResultsFragment extends Fragment {
     private Button mFinishTestButton;
     private Button mShowMistakesButton;
     private TextView mLevelTextView;
+    private TextView mLevelResultsTextView;
 
     public static Fragment newInstance(int questions, int correctAnswers) {
         Bundle args = new Bundle();
@@ -64,7 +67,9 @@ public class TestResultsFragment extends Fragment {
         mFinishTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mContext.finish();
+                if (mContext.mPurpose.equals(mContext.ENTRY)) {
+                    mContext.end(mLevelResultsTextView.getText().toString());
+                }
             }
         });
 
@@ -83,13 +88,25 @@ public class TestResultsFragment extends Fragment {
             }
         });
 
-        mLevelTextView = (TextView) view.findViewById(R.id.tests_results_level);
+        mLevelTextView = (TextView) view.findViewById(R.id.tests_results_level_label);
+        mLevelResultsTextView = (TextView) view.findViewById(R.id.tests_results_level);
 
         if (mContext.mPurpose.equals(mContext.ENTRY)) {
-            mLevelTextView.setText("Easy");
+            mLevelResultsTextView.setText(getLevel());
         } else {
             mLevelTextView.setVisibility(View.INVISIBLE);
+            mLevelResultsTextView.setVisibility(View.INVISIBLE);
         }
         return view;
+    }
+
+    private String getLevel() {
+        float res = (float)mCorrectAnswers / (float)mQuestions;
+        if (res < 0.7) {
+            return TopicsActivity.EASY;
+        } else if (res < 0.9) {
+            return TopicsActivity.MEDIUM;
+        }
+        return TopicsActivity.HARD;
     }
 }
