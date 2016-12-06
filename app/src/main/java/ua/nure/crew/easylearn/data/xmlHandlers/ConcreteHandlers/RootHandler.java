@@ -26,6 +26,9 @@ public class RootHandler extends XmlElementHandler {
                 // Change!
                 innerHandler = new TestHandler();
                 break;
+            case "InitialTest":
+                innerHandler = new InitialTestHandler();
+                break;
             default:
                 throw new XmlParsingException("Unexpected tag type:" + qName);
         }

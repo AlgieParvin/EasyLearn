@@ -1,11 +1,11 @@
 package ua.nure.crew.easylearn.data.models;
 
-import ua.nure.crew.easylearn.data.xmlHandlers.TypeDataPair;
 import ua.nure.crew.easylearn.data.xmlHandlers.XmlParsable;
 import ua.nure.crew.easylearn.exceptions.ContentTypeException;
 import ua.nure.crew.easylearn.exceptions.InitializationException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,6 +25,15 @@ public class Test implements XmlParsable {
     public List<Question>  getQuestions()
     {
         return new ArrayList<>(questions);
+    }
+
+    public List<Question>  getNQuestions(int n) throws IndexOutOfBoundsException {
+        if (n > this.questions.size()){
+            throw new IndexOutOfBoundsException();
+        }
+        List<Question> questions = new ArrayList<>(this.questions);
+        Collections.shuffle(questions);
+        return questions.subList(0, n);
     }
 
     @Override
