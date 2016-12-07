@@ -3,8 +3,10 @@ package ua.nure.crew.easylearn;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 import ua.nure.crew.easylearn.data.dataManaging.RebusLoader;
+import ua.nure.crew.easylearn.data.dataManaging.ResourceLoader;
 import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
 import ua.nure.crew.easylearn.data.models.*;
+import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,6 +48,7 @@ public class loadTopicTest extends ApplicationTestCase<Application> {
         testTest(v.getTest().getQuestions());
         testVocabulary(v.getVocabulary().getWords()); /**/
 
+        testLevelTest(SimpleLoader.getInstance());
         testRebuses(RebusLoader.getInstance());
     }
 
@@ -80,5 +83,11 @@ public class loadTopicTest extends ApplicationTestCase<Application> {
 
         InputStream is = getContext().getAssets().open(r.getImagePath());
         is.read();
+    }
+
+    private void testLevelTest(ResourceLoader loader) throws DataLoadingException {
+        InitialTest test = loader.loadInitialTest(getContext().getAssets());
+
+        testTest(test.getQuestions(15, 2));
     }
 }

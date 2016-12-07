@@ -41,12 +41,15 @@ public class InitialTest implements XmlParsable {
     @Override
     public void addData(XmlParsable part) throws ContentTypeException, InitializationException {
         if (initialized)
-            throw new InitializationException("Already initialized");
+            throw new InitializationException("Already initialized.");
 
         if (part instanceof Test)
         {
             Test test = (Test)part;
             this.tests.add(test);
+        }
+        else if (part instanceof InitialTest) {
+            this.tests = new ArrayList<>(((InitialTest)part).tests);
         }
         else
         {

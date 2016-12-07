@@ -1,0 +1,673 @@
+﻿<InitialTest>
+    <Test>
+        <Question question="You may not like the cold weather here, but you’ll have to ____, I’m afraid.">
+            <Wrong>tell it off</Wrong>
+            <Wrong>sort itself out</Wrong>
+            <Right>put up with it</Right>
+            <Wrong>put it off</Wrong>
+        </Question>
+        <Question question="It’s cold so you should ____ on a warm jacket.">
+            <Wrong>wear</Wrong>
+            <Wrong>dress</Wrong>
+            <Wrong>take</Wrong>
+            <Right>put</Right>
+        </Question>
+        <Question question="Paul will look ____ our dogs while we’re on holiday.">
+            <Right>after</Right>
+            <Wrong>at</Wrong>
+            <Wrong>for</Wrong>
+            <Wrong>into</Wrong>
+        </Question>
+        <Question question="She ____ a lot of her free time reading.">
+            <Wrong>does</Wrong>
+            <Right>spends</Right>
+            <Wrong>has</Wrong>
+            <Wrong>makes</Wrong>
+        </Question>
+        <Question question="Hello, this is Simon. Could I ____ to Jane, please?">
+            <Wrong>say</Wrong>
+            <Wrong>tell</Wrong>
+            <Wrong>call</Wrong>
+            <Right>speak</Right>
+        </Question>
+        <Question question="They’re coming to our house ____ Saturday.">
+            <Wrong>in</Wrong>
+            <Wrong>at</Wrong>
+            <Wrong>with</Wrong>
+            <Right>on</Right>
+        </Question>
+        <Question question="I think it’s very easy to ____ debt these days.">
+            <Wrong>go into</Wrong>
+            <Wrong>become</Wrong>
+            <Right>get into</Right>
+            <Wrong>go down to</Wrong>
+        </Question>
+        <Question question="Come on! Quick! Let’s get ____!">
+            <Right>cracking</Right>
+            <Wrong>highlight</Wrong>
+            <Wrong>with immediate effect</Wrong>
+            <Wrong>massive</Wrong>
+        </Question>
+        <Question question="I phoned her ____ I heard the news.">
+            <Wrong>minute</Wrong>
+            <Right>the moment</Right>
+            <Wrong>by the time</Wrong>
+            <Wrong>during</Wrong>
+        </Question>
+        <Question question="I feel very ____. I’m going to go to bed!">
+            <Wrong>nap</Wrong>
+            <Wrong>asleep</Wrong>
+            <Wrong>sleeper</Wrong>
+            <Right>sleepy</Right>
+        </Question>
+        <Question question="He goes to his guitar lessons ____ ">
+            <Right>y underground</Right>
+            <Wrong>with underground</Wrong>
+            <Wrong>on underground</Wrong>
+            <Wrong>in underground</Wrong>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Wrong>Where playing Real Madrid?</Wrong>
+            <Right>Where is Real Madrid playing?</Right>
+            <Wrong>Where playing is Real Madrid?</Wrong>
+            <Wrong>Where is playing Real Madrid?</Wrong>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Wrong>What’s like Paris?</Wrong>
+            <Right>What’s Paris like?</Right>
+            <Wrong>How’s Paris?</Wrong>
+            <Wrong>How Paris is?</Wrong>
+        </Question>
+        <Question question="George ____ fly to Stockholm tomorrow.">
+            <Wrong>to going</Wrong>
+            <Wrong>goes to</Wrong>
+            <Right>is going to</Right>
+            <Wrong>go to</Wrong>
+        </Question>
+        <Question question="She ____ Supper with us last Friday.">
+            <Wrong>hadn’t</Wrong>
+            <Right>didn’t have</Right>
+            <Wrong>no had</Wrong>
+            <Wrong>didn’t have got</Wrong>
+        </Question>
+        <Question question="We have to go to the supermarket ____ some bread and milk.">
+            <Wrong>for getting</Wrong>
+            <Right>to get</Right>
+            <Wrong>to getting</Wrong>
+            <Wrong>for to get</Wrong>
+        </Question>
+        <Question question="I’ve lost my passport. I can’t find it ____.">
+            <Wrong>nowhere</Wrong>
+            <Wrong>everywhere</Wrong>
+            <Wrong>somewhere</Wrong>
+            <Right>anywhere</Right>
+        </Question>
+        <Question question="____ sugar for my coffee!">
+            <Wrong>There aren't any</Wrong>
+            <Wrong>There is any</Wrong>
+            <Right>There isn't any</Right>
+            <Wrong>There isn’t no</Wrong>
+        </Question>
+        <Question question="Michael ____ Paris in the morning.">
+            <Wrong>to leaving</Wrong>
+            <Right>is leaving for</Right>
+            <Wrong>leaves for</Wrong>
+            <Wrong>leave to</Wrong>
+        </Question>
+        <Question question="That file belongs to Patricia, give it to ____.">
+            <Wrong>it</Wrong>
+            <Wrong>him</Wrong>
+            <Right>her</Right>
+            <Wrong>them</Wrong>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Right>Pass the salt to Tom</Right>
+            <Wrong>Pass the Tom a salt.</Wrong>
+            <Wrong>Pass the salt at Tom</Wrong>
+            <Wrong>Pass to Tom the salt.</Wrong>
+        </Question>
+        <Question question="I'm going out ____ some cigarettes.">
+            <Wrong>to buying</Wrong>
+            <Wrong>for buying</Wrong>
+            <Wrong>for to buy</Wrong>
+            <Right>to buy</Right>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Right>He always wakes up at 9:00.</Right>
+            <Wrong>Always he wakes up at 9:00.</Wrong>
+            <Wrong>He wakes up at always 9:00.</Wrong>
+            <Wrong>He wakes always up at 9:00.</Wrong>
+        </Question>
+        <Question question=" Mark ____ fly to London tomorrow.">
+            <Right>is going to</Right>
+            <Wrong>to going</Wrong>
+            <Wrong>goes to</Wrong>
+            <Wrong>go to</Wrong>
+        </Question>
+        <Question question="I have class ____.">
+            <Right>on Mondays</Right>
+            <Wrong>in Mondays</Wrong>
+            <Wrong>at Mondays</Wrong>
+            <Wrong>by Mondays</Wrong>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Wrong>Give the Joan money.</Wrong>
+            <Wrong>Give to Joan the money.</Wrong>
+            <Wrong>Give the money at Joan.</Wrong>
+            <Right>Give the money to Joan.</Right>
+        </Question>
+        <Question question="The room was empty. There ____ there.">
+            <Wrong>wasn’t nobody</Wrong>
+            <Wrong>was anybody</Wrong>
+            <Right>was nobody</Right>
+            <Wrong>was somebody</Wrong>
+        </Question>
+        <Question question="She arrived ____ Victoria Station half an hour late.">
+            <Wrong>in</Wrong>
+            <Right>at</Right>
+            <Wrong>on</Wrong>
+            <Wrong>by</Wrong>
+        </Question>
+        <Question question="There ____ hooligans at the match, for a change.">
+            <Wrong>were no</Wrong>
+            <Wrong>weren't no</Wrong>
+            <Wrong>were not</Wrong>
+            <Right>were any</Right>
+        </Question>
+        <Question question="The door can’t be broken! he ____.">
+            <Wrong>is just fixed it</Wrong>
+            <Wrong>just fix it</Wrong>
+            <Right>has just fixed it</Right>
+            <Wrong>have just fixed it</Wrong>
+        </Question>
+        <Question question="Micheal ____ in Paris since 1999.">
+            <Wrong>lives</Wrong>
+            <Wrong>is living</Wrong>
+            <Right>has lived</Right>
+            <Wrong>does live</Wrong>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Wrong>I told her what she finished the exercise.</Wrong>
+            <Wrong>I told she finish the exercise.</Wrong>
+            <Wrong>I told her that she finish the exercise.</Wrong>
+            <Right>I told her to finish the exercise.</Right>
+        </Question>
+        <Question question="My mother asked me if I was hungry, But I said that I ____ dinner.">
+            <Right>had already had</Right>
+            <Wrong>had already got</Wrong>
+            <Wrong>have already had</Wrong>
+            <Wrong>already had</Wrong>
+        </Question>
+        <Question question="I'm really looking forward ____ this exercise.">
+            <Wrong>to finish</Wrong>
+            <Wrong>finish</Wrong>
+            <Right>finishing</Right>
+            <Wrong>to finishing</Wrong>
+        </Question>
+        <Question question="You live upstairs from me, ____?">
+            <Wrong>do you</Wrong>
+            <Right>don't you</Right>
+            <Wrong>are you</Wrong>
+            <Wrong>didn’t you</Wrong>
+        </Question>
+        <Question question="____ have they been living in Paris?” “Only a few months">
+            <Right>How long</Right>
+            <Wrong>How long time</Wrong>
+            <Wrong>What time</Wrong>
+            <Wrong>For how long</Wrong>
+        </Question>
+        <Question question="They weren’t invited to the party, and nor ____ I.">
+            <Wrong>weren’t</Wrong>
+            <Wrong>were</Wrong>
+            <Right>was</Right>
+            <Wrong>wasn't</Wrong>
+        </Question>
+        <Question question="We can’t get there by 3.00pm . There is ____ time. ">
+            <Wrong>few</Wrong>
+            <Wrong>too much little</Wrong>
+            <Wrong>too few</Wrong>
+            <Right>too little</Right>
+        </Question>
+        <Question question="He arrived ____ Heathrow airport on Friday morning.">
+            <Right>at</Right>
+            <Wrong>in</Wrong>
+            <Wrong>on</Wrong>
+            <Wrong>by</Wrong>
+        </Question>
+        <Question question="The kitchen can’t be dirty he ____.">
+            <Wrong>is just clean it</Wrong>
+            <Wrong>have just cleaned it</Wrong>
+            <Wrong>just clean it</Wrong>
+            <Right>has just cleaned it</Right>
+        </Question>
+        <Question question="Don’t start ____!">
+            <Wrong>to shouting</Wrong>
+            <Wrong>shout</Wrong>
+            <Right>shouting</Right>
+            <Wrong>in shouting</Wrong>
+        </Question>
+        <Question question="Haven't you seen that film ____ ?">
+            <Right>yet</Right>
+            <Wrong>already</Wrong>
+            <Wrong>still</Wrong>
+            <Wrong>now</Wrong>
+        </Question>
+        <Question question="If I won the lottery, I ____ a house in the country.">
+            <Wrong>will buy</Wrong>
+            <Wrong>have bought</Wrong>
+            <Wrong>would have bought</Wrong>
+            <Right>would buy</Right>
+        </Question>
+        <Question question="I went to the cinema in the afternoon, before that I ____ lunch.">
+            <Wrong>had already got</Wrong>
+            <Right>had already had</Right>
+            <Wrong>have already had</Wrong>
+            <Wrong>already had</Wrong>
+        </Question>
+        <Question question="____ is it from Dublin to Barcelona?">
+            <Right>How far</Right>
+            <Wrong>How long</Wrong>
+            <Wrong>How much distance</Wrong>
+            <Wrong>How many</Wrong>
+        </Question>
+        <Question question="I ____ getting up early.I do it every day.">
+            <Wrong>used to</Wrong>
+            <Wrong>used</Wrong>
+            <Wrong>would</Wrong>
+            <Right>am used to</Right>
+        </Question>
+        <Question question="I wouldn’t mind ____ the baby tonight.">
+            <Right>looking after</Right>
+            <Wrong>to look after</Wrong>
+            <Wrong>look after</Wrong>
+            <Wrong>to looking after</Wrong>
+        </Question>
+        <Question
+                question="-- Those shopping bags look really heavy. ____ carry one for you? \n-- That’s very kind of you!">
+            <Wrong>Will I</Wrong>
+            <Right>Shall I</Right>
+            <Wrong>Do I have</Wrong>
+            <Wrong>Do I</Wrong>
+        </Question>
+        <Question question="What have I done with my wallet? I don't remember ____ it anywhere last night.">
+            <Wrong>to see</Wrong>
+            <Wrong>saw</Wrong>
+            <Right>seeing</Right>
+            <Wrong>did see</Wrong>
+        </Question>
+        <Question question="I'll never forget ____ Rosa win the Eurovision.">
+            <Wrong>see</Wrong>
+            <Right>seeing</Right>
+            <Wrong>to see</Wrong>
+            <Wrong>seen</Wrong>
+        </Question>
+        <Question question="We ____ better study more if we want to pass the exam.">
+            <Wrong>ought</Wrong>
+            <Wrong>should</Wrong>
+            <Wrong>would</Wrong>
+            <Right>had</Right>
+        </Question>
+        <Question question="____ is it from Istanbul to Bagdad?">
+            <Wrong>How much distance</Wrong>
+            <Wrong>How long</Wrong>
+            <Right>How far</Right>
+            <Wrong>How many</Wrong>
+        </Question>
+        <Question question="If you get bored, call me ____ you like, and we can go for a drink.">
+            <Right>whenever</Right>
+            <Wrong>soon</Wrong>
+            <Wrong>always</Wrong>
+            <Wrong>whatever</Wrong>
+        </Question>
+        <Question question="After his girlfriend left him, his boss was the ____ of his worries.">
+            <Wrong>less</Wrong>
+            <Wrong>fewer</Wrong>
+            <Wrong>last</Wrong>
+            <Right>least</Right>
+        </Question>
+        <Question
+                question="--I'm just going out for an ice cream - ____ get one for you too? \n--That would be nice of you!">
+            <Wrong>Do I</Wrong>
+            <Wrong>Will I</Wrong>
+            <Right>Shall I</Right>
+            <Wrong>Do I have</Wrong>
+        </Question>
+        <Question question="That was a horrible thing to say. I think you ____ apologise.">
+            <Right>ought to</Right>
+            <Wrong>need</Wrong>
+            <Wrong>have</Wrong>
+            <Wrong>should have</Wrong>
+        </Question>
+        <Question question="I'll never stop ____ you!">
+            <Wrong>love</Wrong>
+            <Right>loving</Right>
+            <Wrong>to love</Wrong>
+            <Wrong>loved</Wrong>
+        </Question>
+        <Question question="You can meet me ____ you like.">
+            <Wrong>soon</Wrong>
+            <Right>whenever</Right>
+            <Wrong>always</Wrong>
+            <Wrong>whatever</Wrong>
+        </Question>
+        <Question question="I have to catch the 5.00am train tomorrow, so I ____ go to bed early.">
+            <Wrong>haven’t</Wrong>
+            <Wrong>Will I</Wrong>
+            <Right>have to</Right>
+            <Wrong>have had to</Wrong>
+        </Question>
+        <Question question="The man ____ in the corner is my boss.">
+            <Right>sitting</Right>
+            <Wrong>whose</Wrong>
+            <Wrong>is sitting</Wrong>
+            <Wrong>sits</Wrong>
+        </Question>
+        <Question question="Don’t forget ____ those letters.">
+            <Wrong>posting</Wrong>
+            <Wrong>to posting</Wrong>
+            <Wrong>post</Wrong>
+            <Right>to post</Right>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Wrong>The brown fox quick jumped over the dog lazy.</Wrong>
+            <Wrong>The brown quick fox jumped over the lazy dog.</Wrong>
+            <Wrong>The fox quick and brown jumped over the lazy dog.</Wrong>
+            <Right>The quick brown fox jumped over the lazy dog.</Right>
+        </Question>
+        <Question question="____ in telling me these lies, because you know I don't believe you.">
+            <Right>There is no use</Right>
+            <Wrong>It is no point</Wrong>
+            <Wrong>It is no use</Wrong>
+            <Wrong>It is usefulness</Wrong>
+        </Question>
+        <Question question="Not speaking to anyone ____ ,but shouldn't we clean the house?">
+            <Wrong>especially</Wrong>
+            <Wrong>specially</Wrong>
+            <Right>in particular</Right>
+            <Wrong>himself</Wrong>
+        </Question>
+        <Question question="Although it was very late, she ____ book two tickets to Greece.">
+            <Wrong>should</Wrong>
+            <Right>was able to</Right>
+            <Wrong>can</Wrong>
+            <Wrong>would can</Wrong>
+        </Question>
+        <Question question="David walked by us ____ he didn't know us!">
+            <Wrong>like</Wrong>
+            <Wrong>as if he were</Wrong>
+            <Right>as if</Right>
+            <Wrong>as</Wrong>
+        </Question>
+        <Question question="Your cough is terrible! You ____ quit smoking.">
+            <Wrong>mustn't</Wrong>
+            <Wrong>would</Wrong>
+            <Wrong>may</Wrong>
+            <Right>should</Right>
+        </Question>
+        <Question question="It was so nice seeing Simon again! We should have called him ____.">
+            <Right>months back</Right>
+            <Wrong>for months</Wrong>
+            <Wrong>since months</Wrong>
+            <Wrong>in months</Wrong>
+        </Question>
+        <Question question="Let’s go for a walk in the mountains, ____?">
+            <Wrong>don’t we</Wrong>
+            <Right>shall we</Right>
+            <Wrong>let us</Wrong>
+            <Wrong>will we</Wrong>
+        </Question>
+        <Question question="If I ____ you, I’d take the risk.">
+            <Wrong>am</Wrong>
+            <Wrong>have been</Wrong>
+            <Right>were</Right>
+            <Wrong>would be</Wrong>
+        </Question>
+        <Question question="I couldn’t mend the PC myself, so I ____ at a shop.">
+            <Right>had it mended</Right>
+            <Wrong>had it mend</Wrong>
+            <Wrong>had mended</Wrong>
+            <Wrong>did it mend</Wrong>
+        </Question>
+        <Question question="I wish I ____ a car, I’m tired of catching the bus.">
+            <Wrong>have</Wrong>
+            <Right>had</Right>
+            <Wrong>would have</Wrong>
+            <Wrong>had had</Wrong>
+        </Question>
+        <Question question="Choose the right sentence.">
+            <Wrong>That’s a brown, attractive leather coat.</Wrong>
+            <Wrong>That’s an attractive leather brown coat.</Wrong>
+            <Wrong>That’s a brown leather coat attractive.</Wrong>
+            <Right>That’s an attractive brown leather coat.</Right>
+        </Question>
+        <Question question="He drove so fast ____ a mad man.">
+            <Right>as if he were</Right>
+            <Wrong>as if</Wrong>
+            <Wrong>like</Wrong>
+            <Wrong>as</Wrong>
+        </Question>
+        <Question question="If you’d come to the theatre last night, you ____ the play.">
+            <Wrong>would enjoy</Wrong>
+            <Wrong>had enjoyed</Wrong>
+            <Right>would have enjoyed</Right>
+            <Wrong>will enjoy</Wrong>
+        </Question>
+        <Question question="They laughed a lot last night. The film ____ very funny.">
+            <Right>must have been</Right>
+            <Wrong>should have been</Wrong>
+            <Wrong>was to be</Wrong>
+            <Wrong>should be</Wrong>
+        </Question>
+        <Question question="____ waiting any longer. They are clearly not coming.">
+            <Wrong>It is no point</Wrong>
+            <Right>There is no use</Right>
+            <Wrong>It is no use</Wrong>
+            <Wrong>It is usefulness</Wrong>
+        </Question>
+    </Test>
+    <Test>
+        <Question question="A ____ is a person who lives in a foreign country.">
+            <Right>expatriate</Right>
+            <Wrong>executor</Wrong>
+        </Question>
+        <Question question="A ____ is someone who bets money on horse or dog races.">
+            <Right>punter</Right>
+            <Wrong>prude</Wrong>
+        </Question>
+        <Question question=" A ____ is a person who enters and lives in an unoccupied building.">
+            <Wrong>stalwart</Wrong>
+            <Right>squatter</Right>
+        </Question>
+        <Question
+                question="A ____ is a person who has very strong and often unreasonable opinions, but is very intolerant of other people's opinions.">
+            <Wrong>bigot</Wrong>
+            <Right>boor</Right>
+        </Question>
+        <Question question="A ____ is a person who is very rich and powerful, especially in industry.">
+            <Right>magnate</Right>
+            <Wrong>tyrant</Wrong>
+        </Question>
+        <Question question="A ____ is someone who enters a place where they have no right to be.">
+            <Wrong>invigilator</Wrong>
+            <Right>interloper</Right>
+        </Question>
+        <Question question=" A ____ is a person who deliberately damages public or private property.">
+            <Wrong>delinquent</Wrong>
+            <Right>vandal</Right>
+        </Question>
+        <Question question="As quiet as ____.">
+            <Right>an owl</Right>
+            <Wrong>a mouse</Wrong>
+        </Question>
+        <Question question="As easy as ____.">
+            <Wrong>houses</Wrong>
+            <Right>piel</Right>
+        </Question>
+        <Question question="As thick as ____.">
+            <Right>thieves</Right>
+            <Wrong>old boots</Wrong>
+        </Question>
+        <Question question="As stubborn as ____.">
+            <Wrong>a lion</Wrong>
+            <Right>a mule</Right>
+        </Question>
+        <Question question="As quick as ____.">
+            <Wrong>rain</Wrong>
+            <Right>a flash</Right>
+        </Question>
+        <Question question="As smooth as ____.">
+            <Right>velvet</Right>
+            <Wrong>a kitten</Wrong>
+        </Question>
+        <Question question="As pleased as ____.">
+            <Wrong>a poker</Wrong>
+            <Right>punch</Right>
+        </Question>
+        <Question question=" As thin as ____.">
+            <Right>a rake</Right>
+            <Wrong>a sheet</Wrong>
+        </Question>
+    </Test>
+    <Test>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>man</Wrong>
+            <Wrong>boy</Wrong>
+            <Right>cat</Right>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Right>cheese</Right>
+            <Wrong>coffee</Wrong>
+            <Wrong>milk</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>doctor</Wrong>
+            <Right>horse</Right>
+            <Wrong>dentist</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Right>cheese</Right>
+            <Wrong>coffee</Wrong>
+            <Wrong>milk</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>kitchen</Wrong>
+            <Right>police station</Right>
+            <Wrong>bathroom</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>Greek</Wrong>
+            <Wrong>milk</Wrong>
+            <Right>Norway</Right>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>airport</Wrong>
+            <Wrong>train station</Wrong>
+            <Right>market</Right>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>yellow</Wrong>
+            <Wrong>pink</Wrong>
+            <Right>chair</Right>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Right>pencil</Right>
+            <Wrong>telephone</Wrong>
+            <Wrong>fax</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>Greek</Wrong>
+            <Wrong>milk</Wrong>
+            <Right>Norway</Right>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>jacket</Wrong>
+            <Right>umbrella</Right>
+            <Wrong>dress</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>jacket</Wrong>
+            <Right>umbrella</Right>
+            <Wrong>dress</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>butchers</Wrong>
+            <Wrong>shoe store</Wrong>
+            <Right>elephant</Right>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>jacket</Wrong>
+            <Right>umbrella</Right>
+            <Wrong>dress</Wrong>
+        </Question>
+        <Question question="Choose a word that does not fit.">
+            <Wrong>jacket</Wrong>
+            <Right>umbrella</Right>
+            <Wrong>dress</Wrong>
+        </Question>
+    </Test>
+    <Test>
+        <Question question="Choose a synonym for Intelligent.">
+            <Right>clever</Right>
+            <Wrong>elegant</Wrong>
+        </Question>
+        <Question question="Choose a synonym for Beautiful.">
+            <Wrong>stupid</Wrong>
+            <Right>pretty</Right>
+        </Question>
+        <Question question="Choose a synonym for Amusing.">
+            <Right>funny</Right>
+            <Wrong>boring</Wrong>
+        </Question>
+        <Question question="Choose a synonym for Industrious.">
+            <Wrong>beautiful</Wrong>
+            <Right>hard working</Right>
+        </Question>
+        <Question question="Choose a synonym for Incredible.">
+            <Right>not believable</Right>
+            <Wrong>truly</Wrong>
+        </Question>
+        <Question question="Choose a synonym for Generous.">
+            <Wrong>humorous</Wrong>
+            <Right>kind</Right>
+        </Question>
+        <Question question="Choose a synonym for Tidy.">
+            <Wrong>elegant</Wrong>
+            <Right>orderly</Right>
+        </Question>
+
+        <Question question="Choose a word that doesn't fit..">
+            <Wrong>box office</Wrong>
+            <Right>food mixture</Right>
+            <Wrong>stage</Wrong>
+            <Wrong>footlights</Wrong>
+        </Question>
+        <Question question="Choose a word that doesn't fit..">
+            <Wrong>branch</Wrong>
+            <Wrong>leaf</Wrong>
+            <Wrong>twig</Wrong>
+            <Right>sleeve</Right>
+        </Question>
+        <Question question="Choose a word that doesn't fit..">
+            <Wrong>cooker</Wrong>
+            <Right>root</Right>
+            <Wrong>fridge</Wrong>
+            <Wrong>dishwasher</Wrong>
+        </Question>
+        <Question question="Choose a word that doesn't fit..">
+            <Wrong>collar</Wrong>
+            <Right>sink</Right>
+            <Wrong>cuff</Wrong>
+            <Wrong>lape</Wrong>
+        </Question>
+        <Question question="Choose a word that doesn't fit..">
+            <Wrong>clinic</Wrong>
+            <Wrong>x-ray</Wrong>
+            <Wrong>ward</Wrong>
+            <Right>trunk</Right>
+        </Question>
+    </Test>
+</InitialTest>
+
+
+ 
+

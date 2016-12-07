@@ -14,6 +14,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 public class SimpleLoader implements ResourceLoader {
+    private static final String INITIAL_TEST = "level_test";
     private static ResourceLoader instance = null;
     private final String EXTENSION = ".xml";
 
@@ -23,6 +24,25 @@ public class SimpleLoader implements ResourceLoader {
             instance = new SimpleLoader();
 
         return instance;
+    }
+
+    @Override
+    public InitialTest loadInitialTest(AssetManager manager) throws DataLoadingException {
+        XmlHandler xml;
+
+        try {
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser parser = factory.newSAXParser();
+
+            xml = new XmlHandler(XmlHandler.DataType.InitialTest);
+
+            parser.parse(manager.open(INITIAL_TEST + EXTENSION), xml);
+        }
+        catch (SAXException | ParserConfigurationException | IOException e) {
+            throw new DataLoadingException("Error in data parsing.\n" + e.getMessage(), e);
+        }
+
+        return (InitialTest) xml.getData();
     }
 
     public Topic loadTopic(AssetManager manager, String topicName) throws DataLoadingException
