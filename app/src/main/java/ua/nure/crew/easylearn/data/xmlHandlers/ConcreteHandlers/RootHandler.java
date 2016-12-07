@@ -23,7 +23,6 @@ public class RootHandler extends XmlElementHandler {
                 innerHandler = new VocabularyHandler();
                 break;
             case "Test":
-                // Change!
                 innerHandler = new TestHandler();
                 break;
             case "InitialTest":

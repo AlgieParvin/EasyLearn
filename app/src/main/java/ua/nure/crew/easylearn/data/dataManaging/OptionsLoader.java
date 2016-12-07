@@ -25,7 +25,7 @@ public class OptionsLoader {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
 
-            XmlHandler xml = new XmlHandler();
+            XmlHandler xml = new XmlHandler(XmlHandler.DataType.Options);
             parser.parse(is, xml);
 
             EasyLearnData data = (EasyLearnData) xml.getData();

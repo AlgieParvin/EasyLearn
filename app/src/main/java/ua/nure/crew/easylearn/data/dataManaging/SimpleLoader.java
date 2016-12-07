@@ -27,11 +27,13 @@ public class SimpleLoader implements ResourceLoader {
 
     public Topic loadTopic(AssetManager manager, String topicName) throws DataLoadingException
     {
-        XmlHandler xml = new XmlHandler();
+        XmlHandler xml;
 
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
+
+            xml = new XmlHandler(XmlHandler.DataType.Topic);
 
             parser.parse(manager.open(topicName + EXTENSION), xml);
         }
