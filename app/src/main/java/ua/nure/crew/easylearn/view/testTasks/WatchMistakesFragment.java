@@ -54,11 +54,15 @@ public class WatchMistakesFragment extends Fragment {
         mAnswerButtons[2] = (Button) view.findViewById(R.id.tests_third_answer_button);
         mAnswerButtons[3] = (Button) view.findViewById(R.id.tests_fourth_answer_button);
         mAnswerButtons[4] = (Button) view.findViewById(R.id.tests_fifth_answer_button);
+
         if (mQuestion.getAnswers().size() < 5) {
             mAnswerButtons[4].setVisibility(View.INVISIBLE);
         }
-        if (mQuestion.getAnswers().size() == 3) {
+        if (mQuestion.getAnswers().size() < 4) {
             mAnswerButtons[3].setVisibility(View.INVISIBLE);
+        }
+        if (mQuestion.getAnswers().size() < 3) {
+            mAnswerButtons[2].setVisibility(View.INVISIBLE);
         }
 
         for (int i = 0; i < mQuestion.getAnswers().size(); i++) {

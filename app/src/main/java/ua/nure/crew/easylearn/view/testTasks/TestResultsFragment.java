@@ -3,7 +3,6 @@ package ua.nure.crew.easylearn.view.testTasks;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import ua.nure.crew.easylearn.R;
+import ua.nure.crew.easylearn.data.models.Question;
 import ua.nure.crew.easylearn.view.topics.TopicsActivity;
 
 public class TestResultsFragment extends Fragment {
@@ -24,6 +25,7 @@ public class TestResultsFragment extends Fragment {
 
     private int mCorrectAnswers;
     private int mQuestions;
+    private String mLevel;
 
     private TextView mCorrectAnswersTextView;
     private TextView mWrongAnswersTextView;
@@ -50,6 +52,9 @@ public class TestResultsFragment extends Fragment {
         Bundle args = getArguments();
         mQuestions = args.getInt(QUESTIONS);
         mCorrectAnswers = args.getInt(CORRECT_ANSWERS);
+
+        calculateLevel();
+        mContext.prepareForReturn(mLevel);
     }
 
     @Override
@@ -67,9 +72,7 @@ public class TestResultsFragment extends Fragment {
         mFinishTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mContext.mPurpose.equals(mContext.ENTRY)) {
-                    mContext.end(mLevelResultsTextView.getText().toString());
-                }
+                mContext.finish();
             }
         });
 
@@ -78,9 +81,19 @@ public class TestResultsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle args = new Bundle();
+
                 args.putString(TestTasksActivity.TOPIC_TAG, mContext.mTopic);
+                args.putString(TestTasksActivity.PURPOSE_TAG, mContext.mPurpose);
+
                 ArrayList<String> answers = new ArrayList<>(mContext.mAnswers);
                 args.putStringArrayList(TestTasksActivity.ANSWERS, answers);
+
+                // ! implement a method for this
+                ArrayList<ParcelableQuestion> parcelableQuestions = new ArrayList<>();
+                for (Question q : mContext.mQuestions) {
+                    parcelableQuestions.add(new ParcelableQuestion(q));
+                }
+                args.putParcelableArrayList(TestTasksActivity.QUESTIONS, parcelableQuestions);
 
                 Intent intent = new Intent(mContext, WatchMistakesActivity.class);
                 intent.putExtras(args);
@@ -92,7 +105,7 @@ public class TestResultsFragment extends Fragment {
         mLevelResultsTextView = (TextView) view.findViewById(R.id.tests_results_level);
 
         if (mContext.mPurpose.equals(mContext.ENTRY)) {
-            mLevelResultsTextView.setText(getLevel());
+            mLevelResultsTextView.setText(mLevel);
         } else {
             mLevelTextView.setVisibility(View.INVISIBLE);
             mLevelResultsTextView.setVisibility(View.INVISIBLE);
@@ -100,13 +113,14 @@ public class TestResultsFragment extends Fragment {
         return view;
     }
 
-    private String getLevel() {
+    private void calculateLevel() {
         float res = (float)mCorrectAnswers / (float)mQuestions;
         if (res < 0.7) {
-            return TopicsActivity.EASY;
+            mLevel = TopicsActivity.EASY;
         } else if (res < 0.9) {
-            return TopicsActivity.MEDIUM;
+            mLevel = TopicsActivity.MEDIUM;
+        } else {
+            mLevel = TopicsActivity.HARD;
         }
-        return TopicsActivity.HARD;
     }
 }

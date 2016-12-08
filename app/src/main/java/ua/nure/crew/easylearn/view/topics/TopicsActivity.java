@@ -39,6 +39,8 @@ public class TopicsActivity extends AppCompatActivity {
     public static final String MEDIUM = "Medium";
     public static final String HARD = "Hard";
 
+    String mLevel;
+
     ViewPager viewPager;
 
     HashMap<String, Integer> sTopicsImagesHashMap = new HashMap<>();
@@ -69,29 +71,34 @@ public class TopicsActivity extends AppCompatActivity {
 
         // getting info about previously chosen level
         SharedPreferences sp = getPreferences(MODE_PRIVATE);
-        String level = sp.getString(LEVEL_PREF, "None");
+        mLevel = sp.getString(LEVEL_PREF, "None");
 
         // starting a enter_test_dialogue about entry test if 'level' equals to None
-        if (level.equals("None")) {
-            Intent intent = new Intent(this, DialogueActivity.class);
-            startActivityForResult(intent, 1);
-        } else {
-            setLevel(level);
-        }
+        startEntryTestDialogue();
     }
 
     @Override
     public void onResume() {
         super.onResume();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
+        getMenuInflater().inflate(R.menu.menu_topics_activity, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return false;
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.menu_item_entry_test:
+                Intent intent = new Intent(this, TestTasksActivity.class);
+                intent.putExtra(TestTasksActivity.PURPOSE_TAG, TestTasksActivity.ENTRY);
+                startActivityForResult(intent, 1);
+                break;
+        }
+        return true;
     }
 
     class TopicsPagerAdapter extends FragmentPagerAdapter {
@@ -161,5 +168,14 @@ public class TopicsActivity extends AppCompatActivity {
     public void setLevel(String level) {
         List<String> levels = Arrays.asList(EASY, MEDIUM, HARD);
         viewPager.setCurrentItem(levels.indexOf(level));
+    }
+
+    void startEntryTestDialogue() {
+        if (!mLevel.equals("None")) {
+            Intent intent = new Intent(this, DialogueActivity.class);
+            startActivityForResult(intent, 1);
+        } else {
+            setLevel(mLevel);
+        }
     }
 }

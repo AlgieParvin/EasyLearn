@@ -1,10 +1,14 @@
 package ua.nure.crew.easylearn.view.testTasks;
 
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.LoaderManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,10 +19,11 @@ import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
 import ua.nure.crew.easylearn.data.models.Question;
 import ua.nure.crew.easylearn.data.models.Topic;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
+import ua.nure.crew.easylearn.view.type.TaskTypeActivity;
 
 public class WatchMistakesActivity extends AppCompatActivity {
 
-    private List<Question> mQuestions;
+    private List<Question> mQuestions = new ArrayList<>();
     private List<String> mAnswers;
 
     FragmentPagerAdapter adapter;
@@ -41,7 +46,7 @@ public class WatchMistakesActivity extends AppCompatActivity {
             Bundle args = new Bundle();
 
             args.putString(TestTasksActivity.QUESTION, q.getQuestionText());
-            ArrayList<String> answers = new ArrayList<String>(q.getAnswers());
+            ArrayList<String> answers = new ArrayList<>(q.getAnswers());
             args.putStringArrayList(TestTasksActivity.ANSWERS, answers);
             args.putString(TestTasksActivity.CORRECT_ANSWER, q.getRightAnswer());
             args.putString(TestTasksActivity.CHOSEN_ANSWER, mAnswers.get(position));
@@ -55,10 +60,16 @@ public class WatchMistakesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
-
         Bundle args = getIntent().getExtras();
-        loadQuestions(args.getString(TestTasksActivity.TOPIC_TAG));
+
         mAnswers = args.getStringArrayList(TestTasksActivity.ANSWERS);
+
+        List<ParcelableQuestion> parcelableQuestions = args.getParcelableArrayList(
+                TestTasksActivity.QUESTIONS);
+        for (ParcelableQuestion pq : parcelableQuestions) {
+            Question q = new Question(pq.question, pq.answers, pq.rightAnswer);
+            mQuestions.add(q);
+        }
 
         setContentView(R.layout.tests_activity);
 
@@ -66,14 +77,5 @@ public class WatchMistakesActivity extends AppCompatActivity {
         adapter = new WatchMistakesActivity.TestTasksAdapter(getSupportFragmentManager());
         mPager.setAdapter(adapter);
         mPager.setScrollable(true);
-    }
-
-    public void loadQuestions(String topic) {
-        try {
-            Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), topic);
-            mQuestions = t.getTest();
-        } catch (DataLoadingException e) {
-            Toast.makeText(this, "Unfortunately the test is unavailable", Toast.LENGTH_LONG).show();
-        }
     }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -32,9 +33,6 @@ public class DialogueActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DialogueActivity.this, TestTasksActivity.class);
-
-                // ! for now 'Crime and Punishment';
-                intent.putExtra(TaskTypeActivity.TOPIC_TAG, "Medium/Crime and Punishment");
                 intent.putExtra(TestTasksActivity.PURPOSE_TAG, TestTasksActivity.ENTRY);
                 startActivityForResult(intent, 1);
             }

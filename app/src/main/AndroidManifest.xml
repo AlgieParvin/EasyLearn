@@ -15,13 +15,17 @@
             <category android:name="android.intent.category.LAUNCHER"/>
         </intent-filter>
         </activity>
-        <activity android:name=".view.testTasks.TestTasksActivity" />
-        <activity android:name=".view.testTasks.WatchMistakesActivity" />
+        <activity
+            android:name=".view.testTasks.TestTasksActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.testTasks.WatchMistakesActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".view.vocabulary.VocabularyActivity" />
         <activity android:name=".view.type.TaskTypeActivity" />
         <activity
             android:name=".view.enterTest.DialogueActivity"
-            android:theme="@android:style/Theme.Material.Light.Dialog" />
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity android:name=".view.rebuses.RebusesActivity" />
 
     </application>

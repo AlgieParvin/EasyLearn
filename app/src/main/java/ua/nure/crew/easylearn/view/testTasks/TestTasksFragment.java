@@ -78,8 +78,11 @@ public class TestTasksFragment extends Fragment {
         if (mQuestion.getAnswers().size() < 5) {
             mAnswerButtons[4].setVisibility(View.INVISIBLE);
         }
-        if (mQuestion.getAnswers().size() == 3) {
+        if (mQuestion.getAnswers().size() < 4) {
             mAnswerButtons[3].setVisibility(View.INVISIBLE);
+        }
+        if (mQuestion.getAnswers().size() < 3) {
+            mAnswerButtons[2].setVisibility(View.INVISIBLE);
         }
 
         for (int i = 0; i < mQuestion.getAnswers().size(); i++) {

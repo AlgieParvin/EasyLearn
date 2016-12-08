@@ -6,4 +6,8 @@
     <string name="yes">Yes</string>
     <string name="rebus_clear_button_text">Clear</string>
     <string name="rebus_answer_button_text">Check</string>
+
+    <string name="test_loading_error">Test cannot be loaded</string>
+
+    <string name="menu_item_entry_test">Test my level</string>
 </resources>

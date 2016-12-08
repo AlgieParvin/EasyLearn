@@ -3,6 +3,7 @@ package ua.nure.crew.easylearn.view.testTasks;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import ua.nure.crew.easylearn.R;
 import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
+import ua.nure.crew.easylearn.data.models.InitialTest;
 import ua.nure.crew.easylearn.data.models.Question;
 import ua.nure.crew.easylearn.data.models.Topic;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
@@ -31,7 +33,8 @@ public class TestTasksActivity extends AppCompatActivity {
     public static final String TEST = "TEST_TASKS_ACTIVITY_TEST";
     public static final String VIDEOS = "TEST_TASKS_ACTIVITY_VIDEOS";
 
-    public static final String QUESTION = "TEST_TASKS_ACTIVITY_QUESTIONS";
+    public static final String QUESTIONS = "TEST_TASKS_ACTIVITY_QUESTIONS";
+    public static final String QUESTION = "TEST_TASKS_ACTIVITY_QUESTION";
     public static final String ANSWERS = "TEST_TASKS_ACTIVITY_ANSWERS";
     public static final String CORRECT_ANSWER = "TEST_TASKS_ACTIVITY_CORRECT_ANSWER";
     public static final String CHOSEN_ANSWER = "TEST_TASKS_ACTIVITY_CHOSEN_ANSWER";
@@ -85,34 +88,33 @@ public class TestTasksActivity extends AppCompatActivity {
         pager.setCurrentItem(position + 1);
     }
 
-    void end(String level) {
+    void prepareForReturn(String level) {
         Intent returnIntent = new Intent();
         returnIntent.putExtra(LEVEL_TAG, level);
         setResult(Activity.RESULT_OK, returnIntent);
-        finish();
     }
 
-    void loadQuestions() {
-        try {
-            Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
-            mQuestions = t.getTest();
-        } catch (DataLoadingException e) {
-            Toast.makeText(this, "Unfortunately the test is unavailable", Toast.LENGTH_LONG).show();
-        }
-    }
-
+    @Override
     public void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
         Intent intent = getIntent();
 
         mCorrectAnswers = 0;
 
-        mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
-        loadQuestions();
-
         mPurpose = intent.getStringExtra(PURPOSE_TAG);
         if (mPurpose == null) {
             mPurpose = TEST;
+        }
+
+        try {
+            if (mPurpose.equals(ENTRY)) {
+                mQuestions = new TestLoader().getInitialQuestions(getAssets());
+            } else if(mPurpose.equals(TEST)) {
+                mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
+                mQuestions = new TestLoader().getTestQuestions(getAssets(), mTopic);
+            }
+        } catch (DataLoadingException e) {
+            Toast.makeText(this, getString(R.string.test_loading_error), Toast.LENGTH_LONG).show();
         }
 
         setContentView(R.layout.tests_activity);
