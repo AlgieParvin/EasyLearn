@@ -326,7 +326,8 @@
             <Right>least</Right>
         </Question>
         <Question
-                question="--I'm just going out for an ice cream - ____ get one for you too? \n--That would be nice of you!">
+                question="--I'm just going out for an ice cream - ____ get one for you too?
+                --That would be nice of you!">
             <Wrong>Do I</Wrong>
             <Wrong>Will I</Wrong>
             <Right>Shall I</Right>

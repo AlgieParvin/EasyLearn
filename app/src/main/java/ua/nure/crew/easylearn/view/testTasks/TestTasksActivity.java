@@ -112,6 +112,9 @@ public class TestTasksActivity extends AppCompatActivity {
             } else if(mPurpose.equals(TEST)) {
                 mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
                 mQuestions = new TestLoader().getTestQuestions(getAssets(), mTopic);
+            } else if (mPurpose.equals(VIDEOS)) {
+                mTopic = "Medium/Crime and Punishment";
+                mQuestions = new TestLoader().getTestQuestions(getAssets(), mTopic);
             }
         } catch (DataLoadingException e) {
             Toast.makeText(this, getString(R.string.test_loading_error), Toast.LENGTH_LONG).show();

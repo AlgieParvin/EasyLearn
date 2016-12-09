@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="ua.nure.crew.easylearn">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".view.topics.TopicsActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
@@ -26,7 +29,17 @@
         <activity
             android:name=".view.enterTest.DialogueActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
-        <activity android:name=".view.rebuses.RebusesActivity" />
+        <activity
+            android:name=".view.rebuses.RebusesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".view.videos.VideoVocabularyActivity" />
+        <activity android:name=".view.videos.VideoPlayerActivity" />
+        <activity android:name=".view.videos.VideosListActivity" />
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
     </application>
 

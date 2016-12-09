@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.sembozdemir.viewpagerarrowindicator.library.ViewPagerArrowIndicator;
+
 import java.util.List;
 
 import ua.nure.crew.easylearn.R;
@@ -47,7 +49,11 @@ public class RebusesActivity extends AppCompatActivity {
         setContentView(R.layout.rebus_activity);
 
         ViewPager pager = (ViewPager) findViewById(R.id.rebus_view_pager);
+        ViewPagerArrowIndicator indicator =
+                (ViewPagerArrowIndicator) findViewById(R.id.rebus_pager_arrows_wrapper);
+
         pager.setAdapter(new RebusPagerAdapter(getSupportFragmentManager()));
+        indicator.bind(pager);
     }
 
     private void loadRebuses() {

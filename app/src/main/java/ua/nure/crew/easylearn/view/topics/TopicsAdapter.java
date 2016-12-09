@@ -1,6 +1,7 @@
 package ua.nure.crew.easylearn.view.topics;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -37,8 +38,7 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
             mCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String tag = view.getTag().toString();
-                    handleOnClick(view.getContext(), tag);
+                    mTextView.performClick();
                 }
             });
 
@@ -46,8 +46,7 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
             mImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String tag = view.getTag().toString();
-                    handleOnClick(view.getContext(), tag);
+                    mTextView.performClick();
                 }
             });
 
@@ -56,13 +55,14 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
                 @Override
                 public void onClick(View view) {
                     String tag = view.getTag().toString();
-                    handleOnClick(view.getContext(), tag);
+                    ContextWrapper wrapper = (ContextWrapper)view.getContext();
+                    TopicsActivity activity = (TopicsActivity) wrapper.getBaseContext();
+                    handleOnClick(activity, tag);
                 }
             });
         }
 
-        public void handleOnClick(Context context, String tag) {
-            TopicsActivity activity = (TopicsActivity) context;
+        public void handleOnClick(TopicsActivity activity, String tag) {
             Intent intent = new Intent(activity, TaskTypeActivity.class);
             intent.putExtra(TaskTypeActivity.TOPIC_TAG, tag);
             activity.startActivity(intent);

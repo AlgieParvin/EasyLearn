@@ -1,5 +1,6 @@
 package ua.nure.crew.easylearn.view.type;
 
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,8 @@ import java.util.List;
 import ua.nure.crew.easylearn.R;
 import ua.nure.crew.easylearn.view.rebuses.RebusesActivity;
 import ua.nure.crew.easylearn.view.testTasks.TestTasksActivity;
+import ua.nure.crew.easylearn.view.videos.VideoVocabularyActivity;
+import ua.nure.crew.easylearn.view.videos.VideosListActivity;
 import ua.nure.crew.easylearn.view.vocabulary.VocabularyActivity;
 
 public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTypeViewHolder> {
@@ -44,20 +47,25 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
 
         @Override
         public void onClick(View v) {
-            TaskTypeActivity activity = (TaskTypeActivity) v.getContext();
+            ContextWrapper wrapper = (ContextWrapper) v.getContext();
+            TaskTypeActivity activity = (TaskTypeActivity) wrapper.getBaseContext();
+
             Intent intent = null;
             switch (getAdapterPosition()) {
                 case 0:
-                    intent = new Intent(v.getContext(), RebusesActivity.class);
+                    intent = new Intent(activity, RebusesActivity.class);
                     break;
                 case 1:
-                    intent = new Intent(v.getContext(), TestTasksActivity.class);
+                    intent = new Intent(activity, TestTasksActivity.class);
+                    break;
+                case 2:
+                    intent = new Intent(activity, VideosListActivity.class);
                     break;
                 case 3:
-                    intent = new Intent(v.getContext(), VocabularyActivity.class);
+                    intent = new Intent(activity, VocabularyActivity.class);
                     break;
                 default:
-                    intent = new Intent(v.getContext(), VocabularyActivity.class);
+                    intent = new Intent(activity, VocabularyActivity.class);
             }
             intent.putExtra(TaskTypeActivity.TOPIC_TAG, activity.mTopic);
             activity.startActivity(intent);

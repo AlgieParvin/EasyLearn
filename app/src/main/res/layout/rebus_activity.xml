@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<com.sembozdemir.viewpagerarrowindicator.library.ViewPagerArrowIndicator
+    android:id="@+id/rebus_pager_arrows_wrapper"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/rebus_view_pager"
@@ -12,4 +14,4 @@
 
     </android.support.v4.view.ViewPager>
 
-</LinearLayout>
+</com.sembozdemir.viewpagerarrowindicator.library.ViewPagerArrowIndicator>

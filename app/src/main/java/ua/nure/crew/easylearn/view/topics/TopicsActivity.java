@@ -171,7 +171,7 @@ public class TopicsActivity extends AppCompatActivity {
     }
 
     void startEntryTestDialogue() {
-        if (!mLevel.equals("None")) {
+        if (mLevel.equals("None")) {
             Intent intent = new Intent(this, DialogueActivity.class);
             startActivityForResult(intent, 1);
         } else {
