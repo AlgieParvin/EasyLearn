@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_item_entry_test"
+        android:icon="@drawable/testme"
         android:title="@string/menu_item_entry_test" />
 
 </menu>

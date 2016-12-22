@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -34,6 +36,7 @@ import ua.nure.crew.easylearn.view.testTasks.TestTasksActivity;
 public class TopicsActivity extends AppCompatActivity {
 
     public static final String LEVEL_PREF = "TOPICS_ACTIVITY_LEVEL_PREF";
+    public static final String DONT_ASK_AGAIN_PREF = "TOPICS_ACTIVITY_DONT_ASK_AGAIN_PREF";
 
     public static final String EASY = "Easy";
     public static final String MEDIUM = "Medium";
@@ -171,7 +174,13 @@ public class TopicsActivity extends AppCompatActivity {
     }
 
     void startEntryTestDialogue() {
-        if (mLevel.equals("None")) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(
+                getApplicationContext());
+        boolean dontAsk = sharedPref.getBoolean(DONT_ASK_AGAIN_PREF, false);
+        Log.i("DONT", String.valueOf(dontAsk));
+
+
+        if (!dontAsk && mLevel.equals("None")) {
             Intent intent = new Intent(this, DialogueActivity.class);
             startActivityForResult(intent, 1);
         } else {

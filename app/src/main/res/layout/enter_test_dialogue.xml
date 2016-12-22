@@ -11,9 +11,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="25dp"
         android:textStyle="bold"
         android:text="@string/start_test"/>
+
+    <CheckBox
+        android:id="@+id/enter_testing_dont_ask_me_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dont_show_again"
+        android:layout_marginBottom="25dp"
+        android:textSize="18sp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

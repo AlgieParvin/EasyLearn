@@ -11,4 +11,6 @@
     <string name="vocab_loading_error">Vocabulary cannot be loaded</string>
 
     <string name="menu_item_entry_test">Test my level</string>
+
+    <string name="dont_show_again">Don\'t show again</string>
 </resources>
