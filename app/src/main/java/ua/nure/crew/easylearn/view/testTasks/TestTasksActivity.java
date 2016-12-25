@@ -21,6 +21,7 @@ import ua.nure.crew.easylearn.data.models.Question;
 import ua.nure.crew.easylearn.data.models.Topic;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 import ua.nure.crew.easylearn.view.type.TaskTypeActivity;
+import ua.nure.crew.easylearn.view.videos.VideoVocabularyActivity;
 
 public class TestTasksActivity extends AppCompatActivity {
 
@@ -113,8 +114,10 @@ public class TestTasksActivity extends AppCompatActivity {
                 mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
                 mQuestions = new TestLoader().getTestQuestions(getAssets(), mTopic);
             } else if (mPurpose.equals(VIDEOS)) {
-                mTopic = "Medium/Crime and Punishment";
-                mQuestions = new TestLoader().getTestQuestions(getAssets(), mTopic);
+                mTopic = intent.getStringExtra(TOPIC_TAG);
+                Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
+                int pos = intent.getIntExtra(VideoVocabularyActivity.VIDEO_POS_TAG, 1);
+                mQuestions = t.getVideos().get(pos).getTest().getQuestions();
             }
         } catch (DataLoadingException e) {
             Toast.makeText(this, getString(R.string.test_loading_error), Toast.LENGTH_LONG).show();

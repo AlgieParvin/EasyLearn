@@ -35,7 +35,6 @@ public class VocabularyActivity extends AppCompatActivity {
         mVocabularyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mVocabularyRecyclerView.setHasFixedSize(true);
 
-        //mTranslationsList = Translation.loadData(mTopic);
         List<Word> words;
         try {
             Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);

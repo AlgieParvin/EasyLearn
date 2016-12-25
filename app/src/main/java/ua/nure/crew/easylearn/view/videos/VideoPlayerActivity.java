@@ -30,7 +30,7 @@ public class VideoPlayerActivity extends YouTubeBaseActivity
     private YouTubePlayerView youTubeView;
 
     private String mTopic;
-    private Video mVideo;
+    private int mPosition;
 
     private Button startTestButton;
     /**
@@ -46,6 +46,7 @@ public class VideoPlayerActivity extends YouTubeBaseActivity
 
         Intent intent = getIntent();
         mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
+        mPosition = intent.getIntExtra(VideoVocabularyActivity.VIDEO_POS_TAG, 0);
 
         startTestButton = (Button) findViewById(R.id.video_begin_test);
         startTestButton.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,8 @@ public class VideoPlayerActivity extends YouTubeBaseActivity
                 Intent intent = new Intent(VideoPlayerActivity.this, TestTasksActivity.class);
                 intent.putExtra(TestTasksActivity.PURPOSE_TAG, TestTasksActivity.VIDEOS);
                 intent.putExtra(TestTasksActivity.TOPIC_TAG, mTopic);
+                intent.putExtra(VideoVocabularyActivity.VIDEO_POS_TAG, mPosition);
+
                 startActivity(intent);
                 finish();
             }

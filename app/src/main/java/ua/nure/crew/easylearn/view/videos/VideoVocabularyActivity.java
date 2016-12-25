@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import java.util.List;
 import ua.nure.crew.easylearn.R;
 import ua.nure.crew.easylearn.data.dataManaging.SimpleLoader;
 import ua.nure.crew.easylearn.data.models.Topic;
+import ua.nure.crew.easylearn.data.models.Video;
 import ua.nure.crew.easylearn.data.models.Word;
 import ua.nure.crew.easylearn.exceptions.DataLoadingException;
 import ua.nure.crew.easylearn.view.type.TaskTypeActivity;
@@ -28,7 +30,10 @@ import ua.nure.crew.easylearn.view.vocabulary.WordExpandableAdapter;
 
 public class VideoVocabularyActivity extends AppCompatActivity {
 
+    public static final String VIDEO_POS_TAG = "VIDEO_VOCABULARY_ACTIVITY_VIDEO_POS_TAG";
+
     String mTopic;
+    int mPosition;
     List<Translation> mTranslationsList;
 
     RecyclerView mVocabularyRecyclerView;
@@ -43,6 +48,8 @@ public class VideoVocabularyActivity extends AppCompatActivity {
         Intent intent = getIntent();
         mTopic = intent.getStringExtra(TaskTypeActivity.TOPIC_TAG);
 
+        mPosition = intent.getIntExtra(VIDEO_POS_TAG, 0);
+
         mVocabularyRecyclerView = (RecyclerView) findViewById(R.id.video_vocab_recycler_view);
         mVocabularyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mVocabularyRecyclerView.setHasFixedSize(true);
@@ -50,7 +57,8 @@ public class VideoVocabularyActivity extends AppCompatActivity {
         List<Word> words;
         try {
             Topic t = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
-            words = t.getWords();
+            Log.i("POS", String.valueOf(mPosition));
+            words = t.getVideos().get(mPosition).getVocabulary().getWords();
             mTranslationsList = new ArrayList<>(words.size());
 
             for (int i = 0; i < words.size(); i++)
@@ -70,6 +78,9 @@ public class VideoVocabularyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(VideoVocabularyActivity.this, VideoPlayerActivity.class);
+                intent.putExtra(TaskTypeActivity.TOPIC_TAG, mTopic);
+                intent.putExtra(VIDEO_POS_TAG, mPosition);
+
                 startActivityForResult(intent, 1);
                 finish();
             }

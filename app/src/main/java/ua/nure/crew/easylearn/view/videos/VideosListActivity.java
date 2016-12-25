@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class VideosListActivity extends AppCompatActivity {
             Topic topic = SimpleLoader.getInstance().loadTopic(getAssets(), mTopic);
             mVideosList  = topic.getVideos();
         } catch (DataLoadingException e) {
-            // then ...
+            Toast.makeText(this, "Video is unavailable", Toast.LENGTH_LONG).show();
         }
 
         mVideosRecyclerView = (RecyclerView) findViewById(R.id.videos_recycler_view);

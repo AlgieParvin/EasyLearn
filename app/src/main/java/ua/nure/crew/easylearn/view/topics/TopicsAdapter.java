@@ -93,7 +93,11 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.TopicsView
         holder.mTextView.setText(mTopics[position]);
         holder.mTextView.setTag(topic);
 
-        holder.mImageView.setImageResource(mContext.sTopicsImagesHashMap.get(mTopics[position]));
+        if (mContext.sTopicsImagesHashMap.containsKey(mTopics[position])) {
+            holder.mImageView.setImageResource(mContext.sTopicsImagesHashMap.get(mTopics[position]));
+        } else {
+            holder.mImageView.setImageResource(R.drawable.default_topic);
+        }
         holder.mImageView.setTag(topic);
     }
 

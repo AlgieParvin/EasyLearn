@@ -30,7 +30,7 @@ public class TaskTypeActivity extends AppCompatActivity {
         mTaskTypeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mTaskTypeRecyclerView.setHasFixedSize(true);
 
-        mTaskTypeList = TaskType.loadTypes(mTopic);
+        mTaskTypeList = TaskType.loadTypes(getAssets(), mTopic);
         mTaskTypeRecyclerView.setAdapter(new TaskTypeAdapter(mTaskTypeList));
     }
 

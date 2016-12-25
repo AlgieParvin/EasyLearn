@@ -5,7 +5,6 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +37,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideoViewH
             VideosListActivity context = (VideosListActivity) wrapper.getBaseContext();
 
             Intent intent = new Intent(context, VideoVocabularyActivity.class);
+            intent.putExtra(VideoVocabularyActivity.VIDEO_POS_TAG, getItemId());
             intent.putExtra(TaskTypeActivity.TOPIC_TAG, context.mTopic);
             context.startActivity(intent);
             context.finish();
@@ -76,8 +76,11 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideoViewH
     public void onBindViewHolder(VideoViewHolder holder, int position) {
         Video video = mVideosList.get(position);
 
+        String[] videoParts = video.getVideoUrl().split("\\?")[0].split("/");
+        String snaphotUrl = "http://img.youtube.com/vi/" + videoParts[videoParts.length - 1] + "/mqdefault.jpg";
+
         Picasso.with(mContext)
-                .load("http://img.youtube.com/vi/TUzp2XUhskY/mqdefault.jpg")
+                .load(snaphotUrl)
                 .into(holder.mVideoSnapshot);
 
         holder.mVideoTitleTextView.setText("12 Angry Men");
