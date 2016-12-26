@@ -2,6 +2,7 @@ package ua.nure.crew.easylearn.view.type;
 
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import ua.nure.crew.easylearn.R;
@@ -33,7 +36,7 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
         TaskTypeViewHolder(View itemView) {
             super(itemView);
             mTaskTypeCardView = (CardView)itemView.findViewById(R.id.task_type_card_view);
-            mTaskTypeCardView.setOnClickListener(this);
+            //mTaskTypeCardView.setOnClickListener(this);
 
             mTaskTypeNameTextView = (TextView)itemView.findViewById(R.id.task_type_name);
             mTaskTypeNameTextView.setOnClickListener(this);
@@ -51,7 +54,7 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
             TaskTypeActivity activity = (TaskTypeActivity) wrapper.getBaseContext();
 
             Intent intent = null;
-            switch (getAdapterPosition()) {
+            switch ((int)v.getTag()) {
                 case 0:
                     intent = new Intent(activity, RebusesActivity.class);
                     break;
@@ -86,10 +89,21 @@ public class TaskTypeAdapter extends RecyclerView.Adapter<TaskTypeAdapter.TaskTy
 
     @Override
     public void onBindViewHolder(TaskTypeViewHolder taskTypeViewHolder, int i) {
+        List<String> taskTypes = new ArrayList<>();
+        taskTypes.add("Rebuses");
+        taskTypes.add("Tests");
+        taskTypes.add("Video");
+        taskTypes.add("Vocabulary");
+
         TaskType taskType = mTaskTypeList.get(i);
 
         taskTypeViewHolder.mTaskTypeNameTextView.setText(taskType.name);
         taskTypeViewHolder.mTaskTypeImageView.setImageResource(taskType.imageId);
+
+        //taskTypeViewHolder.mTaskTypeCardView.setTag(taskTypes.indexOf(taskType.name));
+        taskTypeViewHolder.mTaskTypeImageView.setTag(taskTypes.indexOf(taskType.name));
+        taskTypeViewHolder.mTaskTypeInfoTextView.setTag(taskTypes.indexOf(taskType.name));
+        taskTypeViewHolder.mTaskTypeNameTextView.setTag(taskTypes.indexOf(taskType.name));
 
         mTaskTypeList.get(i);
         String info = "Tasks completed: " + taskType.passedTasks + " / " + taskType.tasks;
